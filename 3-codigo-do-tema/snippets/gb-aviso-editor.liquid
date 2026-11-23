@@ -1,0 +1,6 @@
+{%- comment -%}
+  Aviso que só aparece no editor do tema, para seção desligada. Parâmetro: texto.
+{%- endcomment -%}
+{%- if request.design_mode -%}
+  <div class="gb gb-editor"><p class="gb-editor__txt">{{ texto | escape }}</p></div>
+{%- endif -%}

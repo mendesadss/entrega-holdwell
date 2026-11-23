@@ -1,0 +1,75 @@
+{%- render 'gb-assets' -%}
+{%- assign s = section.settings -%}
+{%- if s.ativo -%}
+  <section class="gb gb-mail" data-depende="cadastro">
+    <div class="gb-w gb-mail__in">
+      <h2>{{ s.titulo | escape }}</h2>
+      {%- form 'customer', id: 'gb-cadastro', class: 'gb-mail__f' -%}
+        {%- if form.posted_successfully? -%}
+          <p class="gb-mail__ok" role="status">{{ s.ok | escape }}</p>
+        {%- else -%}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div class="gb-mail__c">
+            <label for="gb-email-{{ section.id }}">{{ s.campo | escape }}</label>
+            <input id="gb-email-{{ section.id }}" type="email" name="contact[email]" autocomplete="email" required{% if form.errors %} aria-invalid="true"{% endif %}>
+            {%- if form.errors -%}<p class="gb-mail__erro" role="alert">{{ s.erro | escape }}</p>{%- endif -%}
+          </div>
+          <button class="gb-btn" type="submit">{{ s.botao | escape }}</button>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </section>
+{%- else -%}
+  {%- render 'gb-aviso-editor', texto: 'Cadastro de e-mail desligado. Ligue só depois de decidir o que o cliente recebe (o título promete algo) e de conferir como a loja trata a lista.' -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Holdwell: cadastro",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "ativo",
+      "label": "Mostrar o cadastro",
+      "default": false,
+      "info": "Usa o formulário nativo de cliente da loja (inscrição de e-mail marketing). O título promete novidades: só ligue se a loja for enviar isso."
+    },
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "First to know"
+    },
+    {
+      "type": "text",
+      "id": "campo",
+      "label": "Nome do campo",
+      "default": "Email address"
+    },
+    {
+      "type": "text",
+      "id": "botao",
+      "label": "Botão",
+      "default": "Subscribe"
+    },
+    {
+      "type": "text",
+      "id": "ok",
+      "label": "Mensagem depois de enviar",
+      "default": "Thanks for subscribing."
+    },
+    {
+      "type": "text",
+      "id": "erro",
+      "label": "Mensagem de erro",
+      "default": "Enter a valid email address."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Holdwell: cadastro"
+    }
+  ]
+}
+{% endschema %}

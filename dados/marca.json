@@ -1,0 +1,71 @@
+{
+  "nome": "Holdwellco",
+  "lida_em": "2026-11-23",
+  "origem": [
+    "https://holdwellco.com/",
+    "https://holdwellco.com/products/led-glow-mask"
+  ],
+  "tema": {
+    "nome": "Dawn",
+    "versao": "16.1.1",
+    "id": 160575684800
+  },
+  "logo": {
+    "src": "https://holdwellco.com/cdn/shop/files/holdwell-logo_png.png?v=1789583693&width=90",
+    "largura": 45
+  },
+  "cores": {
+    "fundo": "rgb(245, 247, 247)",
+    "texto": "rgba(22, 36, 31, 0.75)",
+    "titulo": "rgb(22, 36, 31)",
+    "cabecalho_fundo": "rgb(245, 247, 247)",
+    "cabecalho_texto": "rgba(22, 36, 31, 0.75)",
+    "aviso_fundo": null,
+    "aviso_texto": "rgb(245, 247, 247)",
+    "botao_fundo": "rgb(31, 58, 61)",
+    "botao_degrade": null,
+    "botao_texto": "rgb(245, 247, 247)",
+    "promocao": null,
+    "rodape_fundo": "rgb(31, 58, 61)",
+    "rodape_texto": "rgba(245, 247, 247, 0.75)"
+  },
+  "fontes": {
+    "titulo": "Fraunces",
+    "titulo_pilha": "Fraunces, Georgia, serif",
+    "titulo_peso": "500",
+    "titulo_caixa": "none",
+    "titulo_espaco": "-1.28px",
+    "texto": "Inter",
+    "texto_pilha": "Inter, sans-serif"
+  },
+  "botao": {
+    "raio": "9999px",
+    "caixa": "none",
+    "espaco_letras": "normal",
+    "borda": "1px solid rgb(31, 58, 61)",
+    "peso": "400"
+  },
+  "variaveis_do_tema": {
+    "--font-body-family": "Inter, sans-serif",
+    "--font-body-style": "normal",
+    "--font-body-weight": "400",
+    "--font-body-weight-bold": "700",
+    "--font-heading-family": "Fraunces, serif",
+    "--font-heading-style": "normal",
+    "--font-heading-weight": "500",
+    "--font-body-scale": "1.0",
+    "--font-heading-scale": "1.0",
+    "--page-width": "160rem",
+    "--page-width-margin": "0rem",
+    "--buttons-radius": "0px",
+    "--buttons-radius-outset": "0px",
+    "--buttons-border-width": "1px",
+    "--buttons-border-opacity": "1.0",
+    "--buttons-shadow-opacity": "0.0",
+    "--buttons-shadow-visible": "0",
+    "--buttons-shadow-horizontal-offset": "0px",
+    "--buttons-shadow-vertical-offset": "4px",
+    "--buttons-shadow-blur-radius": "5px",
+    "--buttons-border-offset": "0px"
+  }
+}

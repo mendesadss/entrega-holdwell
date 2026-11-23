@@ -1,0 +1,437 @@
+{%- render 'gb-assets' -%}
+{%- liquid
+  assign s = section.settings
+  assign p = s.produto | default: product
+  assign kits = false
+  if s.kits_confirmados
+    assign kits = true
+  endif
+  assign unit_v = p.selected_or_first_available_variant
+  assign unit = unit_v.price
+  assign q0 = 1
+  if kits
+    assign q0 = s.kit_inicial
+  endif
+  assign guia_on = false
+  if kits and s.guia_confirmado and s.guia_produto != blank
+    assign guia_on = true
+    assign guia_preco = s.guia_produto.price | money
+    assign guia_txt = s.guia_texto | replace: '{price}', guia_preco
+  endif
+  assign ad = s.adicional_produto
+  assign ad_on = false
+  if s.adicional_ativo and ad != blank and ad.available
+    assign ad_on = true
+  endif
+  assign ad_v = ad.selected_or_first_available_variant
+  assign ad_multi = false
+  if ad_on and ad.variants.size > 1
+    assign ad_multi = true
+  endif
+-%}
+{%- if p == blank -%}
+  {%- render 'gb-aviso-editor', texto: 'Escolha o produto nesta seção.' -%}
+{%- else -%}
+<section class="gb gb-compra" id="comprar" data-gb-section="compra">
+  <div class="gb-w">
+    <div class="gb-compra__g">
+      <div>
+        <div class="gb-gal-main">
+          {%- for block in section.blocks -%}
+            {%- assign b = block.settings -%}
+            <div class="gb-slide{% if forloop.first %} is-on{% endif %}" data-gb-slide {{ block.shopify_attributes }}>
+              {%- render 'gb-foto', image: b.foto, alt: b.alt, recorte: b.recorte, fx: b.foco_x, fy: b.foco_y, eager: forloop.first, sizes: '(min-width: 760px) 55vw, 100vw' -%}
+            </div>
+          {%- endfor -%}
+        </div>
+        <div class="gb-thumbs">
+          {%- for block in section.blocks -%}
+            {%- assign b = block.settings -%}
+            <button class="gb-thumb" type="button" data-gb-thumb aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="{{ s.rotulo_foto | escape }} {{ b.rotulo | escape }}">
+              {%- render 'gb-foto', image: b.foto, alt: '', recorte: b.recorte, fx: b.foco_x, fy: b.foco_y, sizes: '120px', width: 320 -%}
+            </button>
+          {%- endfor -%}
+        </div>
+      </div>
+      <div class="gb-info">
+        <div class="gb-tit">
+          <h1>{{ p.title | escape }}</h1>
+          <div class="gb-preco" data-gb-preco>{{ unit | money }}</div>
+        </div>
+        <ul class="gb-bens">
+          {%- assign lista_bens = s.beneficios | split: '|' -%}
+          {%- for item in lista_bens -%}
+            <li>{{ item | strip | escape }}</li>
+          {%- endfor -%}
+        </ul>
+        <form method="post" action="{{ routes.cart_add_url }}" accept-charset="UTF-8" enctype="multipart/form-data" data-gb-form>
+          <input type="hidden" name="id" value="{{ unit_v.id }}" data-gb-variant-id>
+          {%- if p.variants.size > 1 -%}
+            <div class="gb-var">
+              <div class="gb-var__t" id="gb-var-{{ section.id }}">{{ s.rotulo_variante | escape }}</div>
+              <div class="gb-var__v" role="radiogroup" aria-labelledby="gb-var-{{ section.id }}">
+                {%- for v in p.variants -%}
+                  <button class="gb-var__b{% unless v.available %} is-esgotada{% endunless %}" type="button" role="radio" aria-checked="{% if v.id == unit_v.id %}true{% else %}false{% endif %}" data-gb-vid="{{ v.id }}">{{ v.title | escape }}</button>
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endif -%}
+          {%- if kits -%}
+            {%- liquid
+              assign f2 = 100 | minus: s.pct2
+              assign f3 = 100 | minus: s.pct3
+              assign p2 = unit | times: 2 | times: f2 | divided_by: 100.0 | round
+              assign p3 = unit | times: 3 | times: f3 | divided_by: 100.0 | round
+            -%}
+            <div class="gb-opts" role="radiogroup" aria-label="{{ s.rotulo_kits | escape }}">
+              <button class="gb-opt" type="button" role="radio" aria-checked="{% if q0 == 1 %}true{% else %}false{% endif %}" data-gb-q="1"><b>{{ s.nome_1 | escape }}</b><strong data-gb-cp="1">{{ unit | money }}</strong><small><span data-gb-ce="1">{{ unit | money }}</span> {{ s.cada | escape }}</small></button>
+              <button class="gb-opt" type="button" role="radio" aria-checked="{% if q0 == 2 %}true{% else %}false{% endif %}" data-gb-q="2"><b>{{ s.nome_2 | escape }}</b><strong data-gb-cp="2">{{ p2 | money }}</strong><small><span data-gb-ce="2">{{ p2 | divided_by: 2.0 | round | money }}</span> {{ s.cada | escape }}</small></button>
+              <button class="gb-opt" type="button" role="radio" aria-checked="{% if q0 == 3 %}true{% else %}false{% endif %}" data-gb-q="3">{% if s.selo != blank %}<em>{{ s.selo | escape }}</em>{% endif %}<b>{{ s.nome_3 | escape }}</b><strong data-gb-cp="3">{{ p3 | money }}</strong><small><span data-gb-ce="3">{{ p3 | divided_by: 3.0 | round | money }}</span> {{ s.cada | escape }}</small></button>
+            </div>
+            <div class="gb-conta" aria-live="polite" data-gb-conta></div>
+          {%- endif -%}
+          <button class="gb-btn" type="submit" data-gb-add style="margin-top:14px"><span data-gb-label>{{ s.botao | escape }}</span><span data-gb-total-wrap>,&nbsp;<span data-gb-total>{{ unit | money }}</span></span></button>
+          <p class="gb-msg" role="alert" data-gb-msg hidden></p>
+        </form>
+        {%- if s.politica_confirmada -%}
+          <div class="gb-selos" data-depende="politica"><span>{{ s.selo_1 | escape }}</span><span>{{ s.selo_2 | escape }}</span></div>
+        {%- endif -%}
+        {%- if ad_on -%}
+          <button class="gb-add" type="button" role="checkbox" aria-checked="false" data-gb-addon data-depende="adicional"><span><b>{{ s.adicional_texto | escape }} {{ ad.title | escape }}</b><small>{% if ad_multi %}<span data-gb-addon-vt>{{ ad_v.title | escape }}</span>, {% endif %}<span data-gb-addon-price>{{ ad_v.price | money }}</span></small></span><i>{% render 'gb-icon', name: 'check', size: 18 %}</i></button>
+          {%- if ad_multi -%}
+            <label class="gb-addvar" for="gb-addvar-{{ section.id }}">
+              <span>{{ s.adicional_variante | escape }}</span>
+              <select id="gb-addvar-{{ section.id }}" data-gb-addon-var>
+                {%- for v in ad.variants -%}
+                  <option value="{{ v.id }}"{% if v.id == ad_v.id %} selected{% endif %}{% unless v.available %} disabled{% endunless %}>{{ v.title | escape }}</option>
+                {%- endfor -%}
+              </select>
+            </label>
+          {%- endif -%}
+        {%- endif -%}
+        {%- if s.descricao_confirmada and p.description != blank -%}
+          <details class="gb-desc" data-depende="descricao-revisada">
+            <summary>{{ s.descricao_titulo | escape }}</summary>
+            <div class="gb-desc__t">{{ p.description }}</div>
+          </details>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+  <div class="gb-barra" data-gb-bar>
+    <b data-gb-total-wrap data-gb-total-bar><span data-gb-total>{{ unit | money }}</span></b>
+    <button class="gb-btn" type="button" data-gb-add-bar><span data-gb-label>{{ s.botao | escape }}</span></button>
+  </div>
+  <script type="application/json" data-gb-data>
+    {
+      "variantes": [{% for v in p.variants %}{"id": {{ v.id }}, "cents": {{ v.price }}, "disponivel": {{ v.available | json }}, "titulo": {{ v.title | json }}}{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      "kits": {{ kits | json }},
+      "pct2": {{ s.pct2 }},
+      "pct3": {{ s.pct3 }},
+      "inicial": {{ q0 }},
+      "adicional": {% if ad_on %}{"id": {{ ad_v.id }}, "cents": {{ ad_v.price }}, "variantes": [{% for v in ad.variants %}{"id": {{ v.id }}, "cents": {{ v.price }}, "titulo": {{ v.title | json }}}{% unless forloop.last %}, {% endunless %}{% endfor %}]}{% else %}null{% endif %},
+      "cartAdd": {{ routes.cart_add_url | append: '.js' | json }},
+      "cart": {{ routes.cart_url | json }},
+      "moeda": {{ cart.currency.iso_code | json }},
+      "locale": {{ request.locale.iso_code | json }},
+      "textos": {
+        "botao": {{ s.botao | json }},
+        "esgotado": {{ s.esgotado | json }},
+        "erro": {{ s.erro | json }},
+        "conta1": {{ s.conta1 | json }},
+        "economia": {{ s.economia | json }},
+        "guia": {% if guia_on %}{{ guia_txt | json }}{% else %}""{% endif %}
+      }
+    }
+  </script>
+  <script type="application/ld+json">{{ p | structured_data }}</script>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Holdwell: compra",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "produto",
+      "label": "Produto (vazio usa o produto da página)"
+    },
+    {
+      "type": "text",
+      "id": "beneficios",
+      "label": "Benefícios (separe com |)",
+      "default": "7 light modes|180 LEDs|Cordless USB-C",
+      "info": "O número de LEDs vem do desenho e depende do documento do fornecedor."
+    },
+    {
+      "type": "text",
+      "id": "botao",
+      "label": "Botão",
+      "default": "Add to cart"
+    },
+    {
+      "type": "text",
+      "id": "esgotado",
+      "label": "Botão sem estoque",
+      "default": "Sold out"
+    },
+    {
+      "type": "text",
+      "id": "erro",
+      "label": "Mensagem de erro ao adicionar",
+      "default": "We could not add this to your cart. Please try again."
+    },
+    {
+      "type": "text",
+      "id": "rotulo_foto",
+      "label": "Leitor de tela: prefixo da miniatura",
+      "default": "Show photo:"
+    },
+    {
+      "type": "text",
+      "id": "rotulo_variante",
+      "label": "Nome da escolha de variante",
+      "default": "Option"
+    },
+    {
+      "type": "header",
+      "content": "Kits de 2 e 3 máscaras"
+    },
+    {
+      "type": "checkbox",
+      "id": "kits_confirmados",
+      "label": "Mostrar os kits",
+      "default": false,
+      "info": "Os totais dos kits só existem no carrinho se a loja tiver desconto automático (2 máscaras 15%, 3 máscaras 30%, sem código). O tema só mostra a conta; quem cobra é a loja. Confira os totais no carrinho antes de ligar. Desligado, só aparece 1 máscara pelo preço do produto."
+    },
+    {
+      "type": "range",
+      "id": "kit_inicial",
+      "label": "Kit marcado ao abrir",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 1,
+      "info": "O desenho propõe 2 marcado ao abrir. Isso precisa de aprovação do dono."
+    },
+    {
+      "type": "range",
+      "id": "pct2",
+      "label": "Desconto de 2 máscaras",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "unit": "%",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "pct3",
+      "label": "Desconto de 3 máscaras",
+      "min": 1,
+      "max": 60,
+      "step": 1,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "text",
+      "id": "rotulo_kits",
+      "label": "Leitor de tela: grupo de kits",
+      "default": "Choose quantity"
+    },
+    {
+      "type": "text",
+      "id": "nome_1",
+      "label": "Kit 1",
+      "default": "1 mask"
+    },
+    {
+      "type": "text",
+      "id": "nome_2",
+      "label": "Kit 2",
+      "default": "2 masks"
+    },
+    {
+      "type": "text",
+      "id": "nome_3",
+      "label": "Kit 3",
+      "default": "3 masks"
+    },
+    {
+      "type": "text",
+      "id": "selo",
+      "label": "Selo do kit 3",
+      "default": "Lowest per mask"
+    },
+    {
+      "type": "text",
+      "id": "cada",
+      "label": "Depois do preço por máscara",
+      "default": "each"
+    },
+    {
+      "type": "text",
+      "id": "conta1",
+      "label": "Linha de conta do kit 1",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "economia",
+      "label": "Antes da economia",
+      "default": "You save"
+    },
+    {
+      "type": "header",
+      "content": "Guia digital nos kits"
+    },
+    {
+      "type": "checkbox",
+      "id": "guia_confirmado",
+      "label": "Dizer que o guia vem junto nos kits de 2 e 3",
+      "default": false,
+      "info": "Só vale com os kits ligados. Ligue se o carrinho entregar o guia sem cobrar."
+    },
+    {
+      "type": "product",
+      "id": "guia_produto",
+      "label": "Produto do guia"
+    },
+    {
+      "type": "text",
+      "id": "guia_texto",
+      "label": "Texto ({price} vira o preço do guia)",
+      "default": "plus a {price} guide"
+    },
+    {
+      "type": "header",
+      "content": "Frete e devolução"
+    },
+    {
+      "type": "checkbox",
+      "id": "politica_confirmada",
+      "label": "Mostrar as duas linhas de política",
+      "default": false,
+      "info": "Política publicada: frete grátis em pedidos de $49 ou mais e devolução em até 30 dias depois da entrega. Ligue só se não mudou."
+    },
+    {
+      "type": "text",
+      "id": "selo_1",
+      "label": "Linha 1",
+      "default": "Free US shipping from $49"
+    },
+    {
+      "type": "text",
+      "id": "selo_2",
+      "label": "Linha 2",
+      "default": "30-day returns"
+    },
+    {
+      "type": "header",
+      "content": "Produto adicional"
+    },
+    {
+      "type": "checkbox",
+      "id": "adicional_ativo",
+      "label": "Mostrar o adicional",
+      "default": false,
+      "info": "Vende o produto adicional pelo preço dele, sem desconto exibido. Confirme o preço antes de ligar."
+    },
+    {
+      "type": "product",
+      "id": "adicional_produto",
+      "label": "Produto adicional"
+    },
+    {
+      "type": "text",
+      "id": "adicional_texto",
+      "label": "Texto antes do nome",
+      "default": "Add the"
+    },
+    {
+      "type": "text",
+      "id": "adicional_variante",
+      "label": "Nome da escolha de variante do adicional",
+      "default": "Option"
+    },
+    {
+      "type": "header",
+      "content": "Descrição do produto"
+    },
+    {
+      "type": "checkbox",
+      "id": "descricao_confirmada",
+      "label": "Mostrar a descrição do produto (bloco fechado)",
+      "default": false,
+      "info": "Leia a descrição no Admin antes de ligar. A descrição atual pode repetir a promessa de rugas e de linhas finas que o plano M2 manda tirar. Só ligue depois de revisar o texto."
+    },
+    {
+      "type": "text",
+      "id": "descricao_titulo",
+      "label": "Título do bloco",
+      "default": "Product details"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "foto",
+      "name": "Foto da galeria",
+      "settings": [
+        {
+          "type": "text",
+          "id": "rotulo",
+          "label": "Nome da foto (miniatura)",
+          "default": ""
+        },
+        {
+          "type": "image_picker",
+          "id": "foto",
+          "label": "Foto"
+        },
+        {
+          "type": "text",
+          "id": "recorte",
+          "label": "Recorte da foto (x, y, largura, altura em %)",
+          "default": "",
+          "info": "Área limpa da foto original da loja (o original tem texto gravado em parte da imagem). Ao trocar a foto, apague este campo. Vazio mostra a foto inteira."
+        },
+        {
+          "type": "range",
+          "id": "foco_x",
+          "label": "Foco horizontal",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "foco_y",
+          "label": "Foco vertical",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Texto alternativo da foto",
+          "default": ""
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Holdwell: compra"
+    }
+  ]
+}
+{% endschema %}

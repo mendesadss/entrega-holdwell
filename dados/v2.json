@@ -1,0 +1,430 @@
+{
+ "ideia": "Dez minutos só seus: a Zeraya vira o ritual de fim de dia, vendida por fatos, enquanto as concorrentes vendem promessa de pele.",
+ "melhor_de_cada": [
+  {
+   "loja": "solawave.co",
+   "pegamos": "Regra da oferta escrita junto do botão e tabela comparativa"
+  },
+  {
+   "loja": "swirise.com",
+   "pegamos": "Escolha do conjunto em cartões com foto e seções grandes de imagem"
+  },
+  {
+   "loja": "kenzzi.com",
+   "pegamos": "Respiro, foto grande e pouca informação por tela"
+  },
+  {
+   "loja": "irish-supply.com",
+   "pegamos": "Sete cores explicadas e bloco simples de como usar"
+  },
+  {
+   "loja": "lumenvira.com",
+   "pegamos": "Primeira foto limpa, cartões por quantidade e passos de uso"
+  }
+ ],
+ "oferta": {
+  "titulo": "Kits de 1, 2 e 3 máscaras com a conta aberta",
+  "itens": [
+   "1 máscara: $59.99",
+   "2 máscaras: $101.98, $50.99 cada, economia de $18.00, guia digital de $14.90 incluso, só se o dono aprovar marcar este kit ao abrir",
+   "3 máscaras: $125.98, $41.99 cada, economia de $53.99, guia digital de $14.90 incluso, selo de menor preço por máscara",
+   "Adicional depois do botão: Neck & Face Massager a $49.90, sem desconto exibido",
+   "Frete grátis nos EUA a partir de $49; envio em 1 a 3 dias úteis; chegada em 7 a 12 dias úteis; devolução de 30 dias após a entrega",
+   "Sem contador, sem estoque falso e sem preço riscado"
+  ],
+  "precisa_confirmar": [
+   "Testar no carrinho os totais de 2 máscaras ($101.98) e 3 máscaras ($125.98).",
+   "Confirmar que o guia de $14.90 sai sozinho nos kits de 2 e 3. A capa diz \"free gift with your order\", o que vale para qualquer pedido.",
+   "Massageador a $49.90, sem o texto de 20% até o dono confirmar se o desconto existe.",
+   "Tirar a oferta de Black Friday e o aviso de 30/11. A página nova afirma que não há contador.",
+   "Conferir o preço comparado de $139.79 do Complete Relief Kit. A frase \"One real price\" depende disso.",
+   "Pedir ao fornecedor o documento dos 180 LEDs e da segurança da máscara.",
+   "Marcar o kit de 2 ao abrir a página só se o dono aprovar.",
+   "Aprovar a tabela \"Many LED mask stores\" contra Holdwellco.",
+   "Decidir a origem das 335 avaliações. A seção fica vazia até existir avaliação de pedido real.",
+   "Ligar o formulário de e-mail ao serviço usado pela loja."
+  ]
+ },
+ "secoes": {
+  "home": [
+   {
+    "nome": "aviso",
+    "frase": "Frete e devolução numa linha."
+   },
+   {
+    "nome": "cabecalho",
+    "frase": "Logo, menu e carrinho."
+   },
+   {
+    "nome": "hero",
+    "frase": "Título grande e leve com rosto em arco."
+   },
+   {
+    "nome": "fatos",
+    "frase": "Os quatro fatos em linha."
+   },
+   {
+    "nome": "ritual",
+    "frase": "Foto grande na cama com frase ao lado."
+   },
+   {
+    "nome": "modos",
+    "frase": "As sete cores com pílulas."
+   },
+   {
+    "nome": "retrato",
+    "frase": "Arco com foto provisória da própria loja."
+   },
+   {
+    "nome": "passos",
+    "frase": "Como usar em três passos."
+   },
+   {
+    "nome": "detalhes",
+    "frase": "Três fotos em escalas diferentes."
+   },
+   {
+    "nome": "caixa",
+    "frase": "Conteúdo, preço e botão."
+   },
+   {
+    "nome": "oferta",
+    "frase": "Lista de 1, 2 e 3 máscaras."
+   },
+   {
+    "nome": "comparacao",
+    "frase": "Como a loja vende, sem teatro."
+   },
+   {
+    "nome": "linha",
+    "frase": "Outros produtos, só em texto."
+   },
+   {
+    "nome": "avaliacoes",
+    "frase": "Espaço reservado e vazio."
+   },
+   {
+    "nome": "garantias",
+    "frase": "Frete, prazo e devolução."
+   },
+   {
+    "nome": "perguntas",
+    "frase": "Dúvidas em abas fechadas."
+   },
+   {
+    "nome": "cuidado",
+    "frase": "Aviso cosmético e contraindicações."
+   },
+   {
+    "nome": "cadastro",
+    "frase": "E-mail."
+   },
+   {
+    "nome": "rodape",
+    "frase": "Políticas e contato."
+   }
+  ],
+  "produto": [
+   {
+    "nome": "aviso",
+    "frase": "Frete e devolução numa linha."
+   },
+   {
+    "nome": "cabecalho",
+    "frase": "Logo, menu e carrinho."
+   },
+   {
+    "nome": "compra",
+    "frase": "Galeria, preço, pílulas, kits, botão e adicional."
+   },
+   {
+    "nome": "fatos",
+    "frase": "Os quatro fatos."
+   },
+   {
+    "nome": "ritual",
+    "frase": "Foto grande em uso."
+   },
+   {
+    "nome": "modos",
+    "frase": "As sete cores com pílulas."
+   },
+   {
+    "nome": "passos",
+    "frase": "Como usar."
+   },
+   {
+    "nome": "leds",
+    "frase": "180 LEDs de perto."
+   },
+   {
+    "nome": "semfio",
+    "frase": "USB-C e sem fio."
+   },
+   {
+    "nome": "ajuste",
+    "frase": "Faixa ajustável."
+   },
+   {
+    "nome": "retrato",
+    "frase": "Arco com foto provisória da própria loja."
+   },
+   {
+    "nome": "caixa",
+    "frase": "Conteúdo, preço e botão."
+   },
+   {
+    "nome": "comparacao",
+    "frase": "Como a loja vende."
+   },
+   {
+    "nome": "guia",
+    "frase": "Capa tipográfica do guia de $14.90."
+   },
+   {
+    "nome": "oferta",
+    "frase": "Kits perto do fim."
+   },
+   {
+    "nome": "entrega",
+    "frase": "Linha do tempo do pedido."
+   },
+   {
+    "nome": "cuidado",
+    "frase": "Aviso e contraindicações."
+   },
+   {
+    "nome": "avaliacoes",
+    "frase": "Espaço reservado e vazio."
+   },
+   {
+    "nome": "perguntas",
+    "frase": "Dúvidas em abas."
+   },
+   {
+    "nome": "linha",
+    "frase": "Outros produtos, só em texto."
+   },
+   {
+    "nome": "cadastro",
+    "frase": "E-mail."
+   },
+   {
+    "nome": "rodape",
+    "frase": "Políticas e contato."
+   }
+  ]
+ },
+ "imagens": [
+  {
+   "pagina": "home",
+   "onde": "hero",
+   "atual": "led-glow-mask-7.jpg",
+   "recorte": "r-sofa.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mascara-led-lifestyle-mulher-madura-roxo.png?v=1791689402",
+   "acao": "manter",
+   "motivo": "Foto da própria Zeraya, recortada em arquivo para não levar texto gravado.",
+   "prompt": ""
+  },
+  {
+   "pagina": "produto",
+   "onde": "galeria",
+   "atual": "led-glow-mask-7.jpg",
+   "recorte": "r-sofa.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mascara-led-lifestyle-mulher-madura-roxo.png?v=1791689402",
+   "acao": "manter",
+   "motivo": "Foto da própria Zeraya, recortada em arquivo para não levar texto gravado.",
+   "prompt": ""
+  },
+  {
+   "pagina": "home e produto",
+   "onde": "ritual",
+   "atual": "led-glow-mask-3.jpg",
+   "recorte": "r-cama.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mascara-led-lifestyle-cama-fones-livro-fechado.png?v=1791689388",
+   "acao": "manter",
+   "motivo": "Foto da própria Zeraya, recortada em arquivo para não levar texto gravado.",
+   "prompt": ""
+  },
+  {
+   "pagina": "home",
+   "onde": "detalhes",
+   "atual": "led-glow-mask-2.jpg",
+   "recorte": "r-mascara.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mascara-led-perfil-lateral-fundo-creme.webp?v=1791689383",
+   "acao": "manter",
+   "motivo": "Foto da própria Zeraya, recortada em arquivo para não levar texto gravado.",
+   "prompt": ""
+  },
+  {
+   "pagina": "produto",
+   "onde": "galeria",
+   "atual": "led-glow-mask-2.jpg",
+   "recorte": "r-mascara.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mascara-led-perfil-lateral-fundo-creme.webp?v=1791689383",
+   "acao": "manter",
+   "motivo": "Foto da própria Zeraya, recortada em arquivo para não levar texto gravado.",
+   "prompt": ""
+  },
+  {
+   "pagina": "home e produto",
+   "onde": "sete modos, um recorte por cor",
+   "atual": "led-glow-mask-4.jpg",
+   "recorte": "r-modo-*.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mascara-led-sete-cores-quadrado.png?v=1791689390",
+   "acao": "manter",
+   "motivo": "Foto da própria Zeraya, recortada em arquivo para não levar texto gravado.",
+   "prompt": ""
+  },
+  {
+   "pagina": "home e produto",
+   "onde": "LEDs de perto",
+   "atual": "led-glow-mask-5.jpg",
+   "recorte": "r-leds.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mascara-led-macro-interior-vermelho.png?v=1791689394",
+   "acao": "manter",
+   "motivo": "Foto da própria Zeraya, recortada em arquivo para não levar texto gravado.",
+   "prompt": ""
+  },
+  {
+   "pagina": "home e produto",
+   "onde": "faixa ajustável",
+   "atual": "led-glow-mask-6.jpg",
+   "recorte": "r-faixa.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mascara-led-ajuste-faixa-cinza.png?v=1791689398",
+   "acao": "manter",
+   "motivo": "Foto da própria Zeraya, recortada em arquivo para não levar texto gravado.",
+   "prompt": ""
+  },
+  {
+   "pagina": "produto",
+   "onde": "sem fio",
+   "atual": "led-glow-mask-8.jpg",
+   "recorte": "r-cabo.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mascara-led-detalhe-carregamento-usb-c.png?v=1791689406",
+   "acao": "manter",
+   "motivo": "Foto da própria Zeraya, recortada em arquivo para não levar texto gravado.",
+   "prompt": ""
+  },
+  {
+   "pagina": "home e produto",
+   "onde": "na caixa",
+   "atual": "led-glow-mask-10.jpg",
+   "recorte": "r-caixa.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mascara-led-flat-lay-acessorios-linho-creme.png?v=1791689410",
+   "acao": "manter",
+   "motivo": "Foto da própria Zeraya, recortada em arquivo para não levar texto gravado.",
+   "prompt": ""
+  },
+  {
+   "pagina": "home e produto",
+   "onde": "como usar",
+   "atual": "led-glow-mask-11.jpg",
+   "recorte": "r-criado.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mascara-led-still-life-criado-mudo.png?v=1791689414",
+   "acao": "manter",
+   "motivo": "Foto da própria Zeraya, recortada em arquivo para não levar texto gravado.",
+   "prompt": ""
+  },
+  {
+   "pagina": "produto",
+   "onde": "primeira foto da galeria, com contexto",
+   "atual": "led-glow-mask-11.jpg",
+   "recorte": "r-criado.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mascara-led-still-life-criado-mudo.png?v=1791689414",
+   "acao": "manter",
+   "motivo": "Foto da própria Zeraya, recortada em arquivo para não levar texto gravado.",
+   "prompt": ""
+  },
+  {
+   "pagina": "nenhuma",
+   "onde": "fora das páginas",
+   "atual": "led-glow-mask-9.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mask-how-to-use.png?v=1791487713",
+   "acao": "retirar",
+   "motivo": "Arte com texto; o recorte da máscara fica pequeno demais.",
+   "prompt": ""
+  },
+  {
+   "pagina": "nenhuma",
+   "onde": "fora das páginas",
+   "atual": "zeraya-glow-companion-1.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/Capa_do_guia_NOVA_2.png?v=1795355210",
+   "acao": "retirar",
+   "motivo": "Capa com texto gravado; o guia virou capa tipográfica.",
+   "prompt": ""
+  },
+  {
+   "pagina": "home",
+   "onde": "retrato-home",
+   "atual": "led-glow-mask-8.jpg",
+   "recorte": "r-perfil.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mascara-led-detalhe-carregamento-usb-c.png?v=1791689406",
+   "acao": "trocar",
+   "nota": "Foto atual provisória e da própria loja.",
+   "motivo": "Retrato em close com a máscara acesa. Falta foto com rosto em primeiro plano.",
+   "prompt": "Use the attached photo as the exact product reference. Editorial beauty portrait of a woman in her 30s wearing the same white rigid LED face mask with soft red light, head turned three quarters, bare shoulders, warm cream background, soft window light, 85mm lens, 4:5, photorealistic, natural skin texture on neck and shoulders. No text, no logo, no watermark.",
+   "negativo": "text, logo, watermark, before and after, medical setting, altered mask shape"
+  },
+  {
+   "pagina": "produto",
+   "onde": "retrato-produto",
+   "atual": "led-glow-mask-7.jpg",
+   "recorte": "r-sofa.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mascara-led-lifestyle-mulher-madura-roxo.png?v=1791689402",
+   "acao": "trocar",
+   "nota": "Foto atual provisória e da própria loja.",
+   "motivo": "Mãos e máscara numa penteadeira clara. Falta foto de ritual com linguagem de cosmético.",
+   "prompt": "Use the attached photo as the exact product reference. Editorial still life of a woman's hands lifting the same white rigid LED face mask from a cream vanity with a folded linen towel and a ceramic dish, soft morning light, skin-tone palette, 50mm lens, 4:5, photorealistic. No text, no logo, no product labels.",
+   "negativo": "text, logo, labels, other brands, before and after, medical setting"
+  },
+  {
+   "pagina": "produto",
+   "onde": "galeria",
+   "atual": "led-glow-mask-1.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-led-capa-uau-01.jpg?v=1795213821",
+   "acao": "trocar",
+   "motivo": "Foto tipo selfie, baixa nitidez e marca d'água. Sai da galeria.",
+   "prompt": "Use the attached photo as the exact product reference. Photograph the same white rigid LED face mask with red light on, open eyes, nose and mouth, gray adjustable strap, worn by a woman in her 30s resting on a linen sofa at dusk, eyes closed, warm lamp light, 50mm lens, shallow depth of field, 1:1, photorealistic. No text, no logo, no watermark.",
+   "negativo": "text, watermark, logo, before and after, skin close-up, medical setting, altered mask shape"
+  },
+  {
+   "pagina": "produto",
+   "onde": "ficha do massageador",
+   "atual": "led-neck-face-massager-2.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-led-benefits-03.jpg?v=1790965155",
+   "acao": "trocar",
+   "motivo": "Texto gravado na foto promete efeito na pele. Não aparece na loja nova, mas continua na ficha do massageador.",
+   "prompt": "Use the attached photo as the exact product reference. Photograph the same white T-shaped neck and face massager with red light, held by a woman at her jawline in a bright bathroom, relaxed expression, soft daylight, 85mm lens, 1:1, photorealistic. No text, no arrows, no labels.",
+   "negativo": "text, arrows, labels, claims, before and after, medical setting"
+  },
+  {
+   "pagina": "produto",
+   "onde": "ficha do massageador",
+   "atual": "led-neck-face-massager-3.jpg",
+   "cdn": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-led-colors-01.jpg?v=1790967135",
+   "acao": "trocar",
+   "motivo": "Texto gravado na foto promete efeito na pele. Não aparece na loja nova, mas continua na ficha do massageador.",
+   "prompt": "Use the attached photo as the exact product reference. Studio still life of the same T-shaped massager in white and black on a pale gray stone surface, soft side light, clean background, 3:2, photorealistic. No text, no icons, no labels.",
+   "negativo": "text, icons, labels, claims, extra products"
+  }
+ ],
+ "fotos_de_outras_lojas": 0,
+ "acima_das_referencias": "Aprovada às cegas na volta 1: 9 de premium e 9 de segmento, contra Solawave 7 e 8 e Swirise 3 e 4.",
+ "julgamento_visual": {
+  "loja_nova": {
+   "premium": 9,
+   "segmento": 9
+  },
+  "solawave": {
+   "premium": 7,
+   "segmento": 8
+  },
+  "swirise": {
+   "premium": 3,
+   "segmento": 4
+  },
+  "observacao": "Notas dadas antes do ajuste final dos arcos e da primeira foto do produto."
+ },
+ "julgamento_visual_status": "aprovado na volta 1"
+}

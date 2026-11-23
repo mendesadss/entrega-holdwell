@@ -1,0 +1,124 @@
+{%- render 'gb-assets' -%}
+{%- assign s = section.settings -%}
+<header class="gb gb-top" data-gb-section="cabecalho">
+  <div class="gb-w gb-top__in">
+    <details class="gb-menu" data-gb-menu>
+      <summary class="gb-menu__b" aria-label="{{ s.menu_aria | escape }}">{%- render 'gb-icon', name: 'menu' -%}</summary>
+      <nav class="gb-menu__p" aria-label="{{ s.menu_aria | escape }}">
+        {%- for block in section.blocks -%}
+          {%- if block.settings.url != blank -%}<a href="{{ block.settings.url }}">{{ block.settings.texto | escape }}</a>{%- endif -%}
+        {%- endfor -%}
+        {%- if s.contato_url != blank -%}<a href="{{ s.contato_url }}">{{ s.contato_texto | escape }}</a>{%- endif -%}
+        {%- if s.rastreio_url != blank -%}<a href="{{ s.rastreio_url }}">{{ s.rastreio_texto | escape }}</a>{%- endif -%}
+      </nav>
+    </details>
+    <a class="gb-logo" href="{{ routes.root_url }}">
+      {%- if s.logo != blank -%}{{ s.logo | image_url: width: 96 | image_tag: width: 32, height: 32, alt: '', loading: 'eager' }}{%- endif -%}
+      {{ s.nome | escape }}
+    </a>
+    <nav class="gb-nav" aria-label="{{ s.nav_aria | escape }}">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.url != blank -%}<a href="{{ block.settings.url }}" {{ block.shopify_attributes }}>{{ block.settings.texto | escape }}</a>{%- endif -%}
+      {%- endfor -%}
+    </nav>
+    <a class="gb-cart" href="{{ routes.cart_url }}" aria-label="{{ s.carrinho | escape }}" data-gb-cart>
+      {%- render 'gb-icon', name: 'cart' -%}
+      <span class="gb-cart__n" data-gb-cart-count{% if cart.item_count == 0 %} hidden{% endif %}>{{ cart.item_count }}</span>
+    </a>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Holdwell: cabeçalho",
+  "tag": "header",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Com esta seção na página, o cabeçalho e o rodapé padrão do tema ficam escondidos só nesta prévia. O carrinho lateral do tema continua funcionando."
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "nome",
+      "label": "Nome ao lado do logo",
+      "default": "Holdwellco"
+    },
+    {
+      "type": "text",
+      "id": "nav_aria",
+      "label": "Leitor de tela: menu",
+      "default": "Main"
+    },
+    {
+      "type": "text",
+      "id": "carrinho",
+      "label": "Leitor de tela: carrinho",
+      "default": "Cart"
+    },
+    {
+      "type": "header",
+      "content": "Menu do celular"
+    },
+    {
+      "type": "text",
+      "id": "menu_aria",
+      "label": "Leitor de tela: botão do menu",
+      "default": "Menu"
+    },
+    {
+      "type": "url",
+      "id": "contato_url",
+      "label": "Link de Contact",
+      "info": "Vazio esconde o link. Use a página de contato que já existe na loja."
+    },
+    {
+      "type": "text",
+      "id": "contato_texto",
+      "label": "Texto do link de contato",
+      "default": "Contact"
+    },
+    {
+      "type": "url",
+      "id": "rastreio_url",
+      "label": "Link de Track Order",
+      "info": "Vazio esconde o link. A coleta não achou página de rastreio: preencha só se ela existir."
+    },
+    {
+      "type": "text",
+      "id": "rastreio_texto",
+      "label": "Texto do link de rastreio",
+      "default": "Track Order"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Link do menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "texto",
+          "label": "Texto",
+          "default": "Shop All"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Holdwell: cabeçalho"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,149 @@
+{%- render 'gb-assets' -%}
+{%- assign s = section.settings -%}
+<footer class="gb gb-rodape">
+  <div class="gb-w">
+    <div class="gb-rodape__g">
+      <div>
+        <div class="gb-marca">{{ s.nome | escape }}</div>
+        {%- if s.texto != blank -%}<p>{{ s.texto | escape }}</p>{%- endif -%}
+        {%- if s.email != blank -%}<p style="margin-top:8px">{{ s.email | escape }}</p>{%- endif -%}
+      </div>
+      <div>
+        <b>{{ s.titulo_loja | escape }}</b>
+        {%- for block in section.blocks -%}
+          {%- if block.settings.url != blank -%}<a href="{{ block.settings.url }}" {{ block.shopify_attributes }}>{{ block.settings.texto | escape }}</a>{%- endif -%}
+        {%- endfor -%}
+      </div>
+      <div>
+        <b>{{ s.titulo_ajuda | escape }}</b>
+        {%- if shop.shipping_policy != blank -%}<a href="{{ shop.shipping_policy.url }}">{{ s.l_envio | escape }}</a>{%- endif -%}
+        {%- if shop.refund_policy != blank -%}<a href="{{ shop.refund_policy.url }}">{{ s.l_devolucao | escape }}</a>{%- endif -%}
+        {%- if shop.privacy_policy != blank -%}<a href="{{ shop.privacy_policy.url }}">{{ s.l_privacidade | escape }}</a>{%- endif -%}
+        {%- if shop.terms_of_service != blank -%}<a href="{{ shop.terms_of_service.url }}">{{ s.l_termos | escape }}</a>{%- endif -%}
+        {%- if s.contato_url != blank -%}<a href="{{ s.contato_url }}">{{ s.l_contato | escape }}</a>{%- endif -%}
+        {%- if s.rastreio_url != blank -%}<a href="{{ s.rastreio_url }}">{{ s.l_rastreio | escape }}</a>{%- endif -%}
+      </div>
+    </div>
+    <div class="gb-legal">&copy; {{ 'now' | date: '%Y' }} {{ s.nome | escape }}</div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Holdwell: rodapé",
+  "tag": "footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "nome",
+      "label": "Nome da loja",
+      "default": "Holdwellco"
+    },
+    {
+      "type": "text",
+      "id": "texto",
+      "label": "Texto",
+      "default": "Cosmetic device, not a medical device. Results vary."
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "E-mail de contato",
+      "default": "support@holdwellco.com"
+    },
+    {
+      "type": "text",
+      "id": "titulo_loja",
+      "label": "Título da coluna de loja",
+      "default": "Shop"
+    },
+    {
+      "type": "text",
+      "id": "titulo_ajuda",
+      "label": "Título da coluna de ajuda",
+      "default": "Help"
+    },
+    {
+      "type": "header",
+      "content": "Links de política (só aparecem as políticas publicadas)"
+    },
+    {
+      "type": "text",
+      "id": "l_envio",
+      "label": "Envio",
+      "default": "Shipping"
+    },
+    {
+      "type": "text",
+      "id": "l_devolucao",
+      "label": "Devolução",
+      "default": "Returns"
+    },
+    {
+      "type": "text",
+      "id": "l_privacidade",
+      "label": "Privacidade",
+      "default": "Privacy"
+    },
+    {
+      "type": "text",
+      "id": "l_termos",
+      "label": "Termos",
+      "default": "Terms"
+    },
+    {
+      "type": "header",
+      "content": "Contato e rastreio (vazio esconde o link)"
+    },
+    {
+      "type": "url",
+      "id": "contato_url",
+      "label": "Link de Contact",
+      "info": "Use a página de contato que já existe na loja."
+    },
+    {
+      "type": "text",
+      "id": "l_contato",
+      "label": "Texto de Contact",
+      "default": "Contact"
+    },
+    {
+      "type": "url",
+      "id": "rastreio_url",
+      "label": "Link de Track Order",
+      "info": "A coleta não achou página de rastreio: preencha só se ela existir."
+    },
+    {
+      "type": "text",
+      "id": "l_rastreio",
+      "label": "Texto de Track Order",
+      "default": "Track Order"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Link da coluna de loja",
+      "settings": [
+        {
+          "type": "text",
+          "id": "texto",
+          "label": "Texto",
+          "default": "Shop All"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Holdwell: rodapé"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,72 @@
+{%- render 'gb-assets' -%}
+{%- assign s = section.settings -%}
+<section class="gb gb-sec gb-rit">
+  <div class="gb-w gb-rit__in">
+    <div class="gb-ph gb-rit__f">
+      {%- render 'gb-foto', image: s.foto, alt: s.alt, recorte: s.recorte, fx: s.foco_x, fy: s.foco_y, sizes: '(min-width: 760px) 60vw, 100vw' -%}
+    </div>
+    <h2>{{ s.titulo | escape }}</h2>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Holdwell: ritual",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "The part of the day that is only yours."
+    },
+    {
+      "type": "header",
+      "content": "Foto"
+    },
+    {
+      "type": "image_picker",
+      "id": "foto",
+      "label": "Foto"
+    },
+    {
+      "type": "text",
+      "id": "recorte",
+      "label": "Recorte da foto (x, y, largura, altura em %)",
+      "default": "21.93,0,78.07,81.98",
+      "info": "Área limpa da foto original da loja (o original tem texto gravado em parte da imagem). Ao trocar a foto, apague este campo. Vazio mostra a foto inteira."
+    },
+    {
+      "type": "range",
+      "id": "foco_x",
+      "label": "Foco horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "foco_y",
+      "label": "Foco vertical",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "text",
+      "id": "alt",
+      "label": "Texto alternativo da foto",
+      "default": "Woman resting in bed wearing the Zeraya mask in red light"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Holdwell: ritual"
+    }
+  ]
+}
+{% endschema %}

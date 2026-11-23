@@ -1,0 +1,44 @@
+{%- comment -%}
+  Foto da loja, com recorte opcional.
+  Parâmetros:
+    image   imagem do seletor ou da mídia do produto
+    alt     texto alternativo
+    recorte "x,y,largura,altura" em % da foto original (vazio = foto inteira, preenchendo a caixa)
+    fx, fy  ponto de foco dentro do recorte, de 0 a 100 (padrão 50)
+    eager   true só para a primeira foto visível da página
+    sizes   atributo sizes (padrão 100vw)
+    width   maior largura pedida (padrão 1600)
+  O recorte existe porque as fotos originais da loja têm texto gravado em parte da imagem: o desenho aprovado usa só a área limpa.
+  Ao trocar a foto, apague o recorte. A caixa pai precisa ter altura ou aspect-ratio e position: relative (classe gb-ph).
+{%- endcomment -%}
+{%- if image != blank -%}
+  {%- assign gb_alt = alt | default: image.alt | default: '' -%}
+  {%- assign gb_sizes = sizes | default: '100vw' -%}
+  {%- assign gb_max = width | default: 1600 -%}
+  {%- assign gb_fx = fx | default: 50 -%}
+  {%- assign gb_fy = fy | default: 50 -%}
+  {%- assign gb_loading = 'lazy' -%}
+  {%- assign gb_prio = 'auto' -%}
+  {%- if eager -%}
+    {%- assign gb_loading = 'eager' -%}
+    {%- assign gb_prio = 'high' -%}
+  {%- endif -%}
+  {%- assign gb_rec = recorte | split: ',' -%}
+  {%- if gb_rec.size == 4 -%}
+    {%- assign rx = gb_rec[0] | strip | times: 1.0 | divided_by: 100 -%}
+    {%- assign ry = gb_rec[1] | strip | times: 1.0 | divided_by: 100 -%}
+    {%- assign rw = gb_rec[2] | strip | times: 1.0 | divided_by: 100 -%}
+    {%- assign rh = gb_rec[3] | strip | times: 1.0 | divided_by: 100 -%}
+    {%- assign ar_rec = image.aspect_ratio | times: rw | divided_by: rh -%}
+    {%- assign fxn = gb_fx | times: 1.0 | divided_by: 100 -%}
+    {%- assign fyn = gb_fy | times: 1.0 | divided_by: 100 -%}
+    {%- assign gb_style = '--rx:' | append: rx | append: ';--ry:' | append: ry | append: ';--rw:' | append: rw | append: ';--rh:' | append: rh | append: ';--ar:' | append: ar_rec | append: ';--iar:' | append: image.aspect_ratio | append: ';--fx:' | append: fxn | append: ';--fy:' | append: fyn -%}
+    <div class="gb-rec">
+      {{- image | image_url: width: gb_max | image_tag: class: 'gb-rec__img', alt: gb_alt, loading: gb_loading, fetchpriority: gb_prio, widths: '720, 1000, 1254, 1600', sizes: gb_sizes, style: gb_style -}}
+    </div>
+  {%- else -%}
+    {%- assign gb_pos = gb_fx | append: '% ' | append: gb_fy | append: '%' -%}
+    {%- assign gb_style = 'object-position:' | append: gb_pos -%}
+    {{- image | image_url: width: gb_max | image_tag: class: 'gb-fill', alt: gb_alt, loading: gb_loading, fetchpriority: gb_prio, widths: '360, 540, 720, 900, 1200, 1600', sizes: gb_sizes, style: gb_style -}}
+  {%- endif -%}
+{%- endif -%}

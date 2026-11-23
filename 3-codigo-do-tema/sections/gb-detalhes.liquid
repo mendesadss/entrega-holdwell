@@ -1,0 +1,94 @@
+{%- render 'gb-assets' -%}
+{%- assign s = section.settings -%}
+<section class="gb gb-sec gb-detalhes">
+  <div class="gb-w gb-ed">
+    <h2>{{ s.titulo | escape }}</h2>
+    {%- for block in section.blocks limit: 3 -%}
+      {%- case forloop.index -%}
+        {%- when 2 -%}{%- assign cls = 'gb-e3' -%}
+        {%- when 3 -%}{%- assign cls = 'gb-e4' -%}
+        {%- else -%}{%- assign cls = 'gb-e1' -%}
+      {%- endcase -%}
+      {%- assign b = block.settings -%}
+      <figure class="{{ cls }}" {{ block.shopify_attributes }}>
+        <div class="gb-ph">
+          {%- render 'gb-foto', image: b.foto, alt: b.alt, recorte: b.recorte, fx: b.foco_x, fy: b.foco_y, sizes: '(min-width: 760px) 60vw, 100vw' -%}
+        </div>
+        {%- if b.legenda != blank -%}<figcaption class="gb-cap">{{ b.legenda | escape }}</figcaption>{%- endif -%}
+      </figure>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Holdwell: detalhes",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "Built for the couch."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "foto",
+      "name": "Foto com legenda",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "foto",
+          "label": "Foto"
+        },
+        {
+          "type": "text",
+          "id": "recorte",
+          "label": "Recorte da foto (x, y, largura, altura em %)",
+          "default": "",
+          "info": "Área limpa da foto original da loja (o original tem texto gravado em parte da imagem). Ao trocar a foto, apague este campo. Vazio mostra a foto inteira."
+        },
+        {
+          "type": "range",
+          "id": "foco_x",
+          "label": "Foco horizontal",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "foco_y",
+          "label": "Foco vertical",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Texto alternativo da foto",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "legenda",
+          "label": "Legenda",
+          "default": ""
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Holdwell: detalhes"
+    }
+  ]
+}
+{% endschema %}

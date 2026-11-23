@@ -1,0 +1,100 @@
+{%- render 'gb-assets' -%}
+{%- assign s = section.settings -%}
+{%- assign p = s.produto -%}
+<section class="gb gb-hero">
+  <div class="gb-w gb-hero__in">
+    <div>
+      <h1>{{ s.titulo_1 | escape }}{% if s.titulo_2 != blank %}<br>{{ s.titulo_2 | escape }}{% endif %}</h1>
+      {%- if s.texto != blank -%}<p>{{ s.texto | escape }}</p>{%- endif -%}
+      {%- if p != blank -%}<a class="gb-btn" href="{{ p.url }}">{{ s.botao | escape }}, {{ p.price | money }}</a>{%- endif -%}
+    </div>
+    <div class="gb-ph gb-arco gb-hero__f">
+      {%- render 'gb-foto', image: s.foto, alt: s.alt, recorte: s.recorte, fx: s.foco_x, fy: s.foco_y, eager: true, sizes: '(min-width: 760px) 42vw, 100vw' -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Holdwell: abertura",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo_1",
+      "label": "Título, linha 1",
+      "default": "Ten quiet minutes."
+    },
+    {
+      "type": "text",
+      "id": "titulo_2",
+      "label": "Título, linha 2",
+      "default": "Seven lights."
+    },
+    {
+      "type": "textarea",
+      "id": "texto",
+      "label": "Texto",
+      "default": "A cordless LED face mask for the end of your day."
+    },
+    {
+      "type": "product",
+      "id": "produto",
+      "label": "Produto do botão (o preço vem dele)"
+    },
+    {
+      "type": "text",
+      "id": "botao",
+      "label": "Botão",
+      "default": "Shop the mask"
+    },
+    {
+      "type": "header",
+      "content": "Foto"
+    },
+    {
+      "type": "image_picker",
+      "id": "foto",
+      "label": "Foto"
+    },
+    {
+      "type": "text",
+      "id": "recorte",
+      "label": "Recorte da foto (x, y, largura, altura em %)",
+      "default": "7.97,1.99,72.01,77.99",
+      "info": "Área limpa da foto original da loja (o original tem texto gravado em parte da imagem). Ao trocar a foto, apague este campo. Vazio mostra a foto inteira."
+    },
+    {
+      "type": "range",
+      "id": "foco_x",
+      "label": "Foco horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "foco_y",
+      "label": "Foco vertical",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 20
+    },
+    {
+      "type": "text",
+      "id": "alt",
+      "label": "Texto alternativo da foto",
+      "default": "Woman relaxing at dusk wearing the Zeraya mask in purple light"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Holdwell: abertura"
+    }
+  ]
+}
+{% endschema %}

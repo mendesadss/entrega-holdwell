@@ -1,0 +1,92 @@
+{%- render 'gb-assets' -%}
+{%- assign s = section.settings -%}
+<section class="gb gb-sec gb-como">
+  <div class="gb-w gb-passos">
+    <div class="gb-ph gb-arco gb-passos__f">
+      {%- render 'gb-foto', image: s.foto, alt: s.alt, recorte: s.recorte, fx: s.foco_x, fy: s.foco_y, sizes: '(min-width: 760px) 40vw, 100vw' -%}
+    </div>
+    <div>
+      <h2>{{ s.titulo | escape }}</h2>
+      {%- for block in section.blocks -%}
+        <div class="gb-passo" {{ block.shopify_attributes }}><b>{{ forloop.index }}</b><h3>{{ block.settings.texto | escape }}</h3></div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Holdwell: passos",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "Three steps. One button."
+    },
+    {
+      "type": "header",
+      "content": "Foto"
+    },
+    {
+      "type": "image_picker",
+      "id": "foto",
+      "label": "Foto"
+    },
+    {
+      "type": "text",
+      "id": "recorte",
+      "label": "Recorte da foto (x, y, largura, altura em %)",
+      "default": "0,0,100,76.95",
+      "info": "Área limpa da foto original da loja (o original tem texto gravado em parte da imagem). Ao trocar a foto, apague este campo. Vazio mostra a foto inteira."
+    },
+    {
+      "type": "range",
+      "id": "foco_x",
+      "label": "Foco horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 55
+    },
+    {
+      "type": "range",
+      "id": "foco_y",
+      "label": "Foco vertical",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "text",
+      "id": "alt",
+      "label": "Texto alternativo da foto",
+      "default": "Zeraya mask on a nightstand beside a candle and books"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "passo",
+      "name": "Passo",
+      "settings": [
+        {
+          "type": "text",
+          "id": "texto",
+          "label": "Texto",
+          "default": "Start with clean, dry skin"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [
+    {
+      "name": "Holdwell: passos"
+    }
+  ]
+}
+{% endschema %}

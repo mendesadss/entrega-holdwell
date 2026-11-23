@@ -1,0 +1,172 @@
+{%- render 'gb-assets' -%}
+{%- liquid
+  assign s = section.settings
+  assign p = s.produto | default: product
+  assign g = s.guia_produto
+  assign guia_on = false
+  if s.guia_confirmado and g != blank
+    assign guia_on = true
+  endif
+  assign on_pdp = false
+  if request.page_type == 'product'
+    assign on_pdp = true
+  endif
+-%}
+{%- if s.kits_confirmados and p != blank -%}
+  {%- liquid
+    assign unit = p.selected_or_first_available_variant.price
+    assign f2 = 100 | minus: s.pct2
+    assign f3 = 100 | minus: s.pct3
+    assign p2 = unit | times: 2 | times: f2 | divided_by: 100.0 | round
+    assign p3 = unit | times: 3 | times: f3 | divided_by: 100.0 | round
+    assign e2 = p2 | divided_by: 2.0 | round
+    assign e3 = p3 | divided_by: 3.0 | round
+    assign s2 = unit | times: 2 | minus: p2
+    assign s3 = unit | times: 3 | minus: p3
+    if guia_on
+      assign guia_preco = g.price | money
+      assign guia_txt = s.guia_texto | replace: '{price}', guia_preco
+    endif
+  -%}
+  <section class="gb gb-sec gb-oferta" data-depende="desconto-dos-kits">
+    <div class="gb-w">
+      <h2>{{ s.titulo | escape }}</h2>
+      <div>
+        <a class="gb-kit" href="{% if on_pdp %}#comprar{% else %}{{ p.url }}?qty=1{% endif %}" data-gb-kit="1"><h3>{{ s.nome_1 | escape }}</h3><small>{% if s.politica_confirmada %}{{ s.sub_1 | escape }}{% endif %}</small><strong>{{ unit | money }}</strong><span class="gb-seta" aria-hidden="true">&#8594;</span></a>
+        <a class="gb-kit" href="{% if on_pdp %}#comprar{% else %}{{ p.url }}?qty=2{% endif %}" data-gb-kit="2"><h3>{{ s.nome_2 | escape }}</h3><small>{{ e2 | money }} {{ s.cada | escape }}, {{ s.economia | escape }} {{ s2 | money }}{% if guia_on %}, {{ guia_txt | escape }}{% endif %}</small><strong>{{ p2 | money }}</strong><span class="gb-seta" aria-hidden="true">&#8594;</span></a>
+        <a class="gb-kit" href="{% if on_pdp %}#comprar{% else %}{{ p.url }}?qty=3{% endif %}" data-gb-kit="3"><h3>{{ s.nome_3 | escape }}{% if s.selo != blank %}<span class="gb-tag">{{ s.selo | escape }}</span>{% endif %}</h3><small>{{ e3 | money }} {{ s.cada | escape }}, {{ s.economia | escape }} {{ s3 | money }}{% if guia_on %}, {{ guia_txt | escape }}{% endif %}</small><strong>{{ p3 | money }}</strong><span class="gb-seta" aria-hidden="true">&#8594;</span></a>
+      </div>
+    </div>
+  </section>
+{%- else -%}
+  {%- render 'gb-aviso-editor', texto: 'Kits desligados. Ligue só depois de conferir no carrinho que 2 máscaras saem pelo preço da conta e 3 também (desconto automático da loja).' -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Holdwell: kits",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "kits_confirmados",
+      "label": "Mostrar os kits de 2 e 3 máscaras",
+      "default": false,
+      "info": "Os preços dos kits só existem no carrinho se a loja tiver o desconto automático (2 máscaras 15%, 3 máscaras 30%, sem código). Ligue só depois de conferir os totais no carrinho. Ligue junto com a mesma opção da seção de compra."
+    },
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "One for you. One to give."
+    },
+    {
+      "type": "product",
+      "id": "produto",
+      "label": "Produto (na página do produto, vazio usa o produto da página)"
+    },
+    {
+      "type": "range",
+      "id": "pct2",
+      "label": "Desconto de 2 máscaras",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "unit": "%",
+      "default": 15,
+      "info": "Tem de ser igual ao desconto automático da loja."
+    },
+    {
+      "type": "range",
+      "id": "pct3",
+      "label": "Desconto de 3 máscaras",
+      "min": 1,
+      "max": 60,
+      "step": 1,
+      "unit": "%",
+      "default": 30,
+      "info": "Tem de ser igual ao desconto automático da loja."
+    },
+    {
+      "type": "text",
+      "id": "nome_1",
+      "label": "Kit 1: nome",
+      "default": "One mask"
+    },
+    {
+      "type": "text",
+      "id": "nome_2",
+      "label": "Kit 2: nome",
+      "default": "Two masks"
+    },
+    {
+      "type": "text",
+      "id": "nome_3",
+      "label": "Kit 3: nome",
+      "default": "Three masks"
+    },
+    {
+      "type": "text",
+      "id": "selo",
+      "label": "Selo do kit 3",
+      "default": "Lowest per mask"
+    },
+    {
+      "type": "text",
+      "id": "cada",
+      "label": "Texto depois do preço por máscara",
+      "default": "each"
+    },
+    {
+      "type": "text",
+      "id": "economia",
+      "label": "Texto antes da economia",
+      "default": "save"
+    },
+    {
+      "type": "header",
+      "content": "Depende da política publicada"
+    },
+    {
+      "type": "checkbox",
+      "id": "politica_confirmada",
+      "label": "Mostrar a linha de frete do kit 1",
+      "default": false,
+      "info": "Política de envio publicada: frete grátis em pedidos de $49 ou mais."
+    },
+    {
+      "type": "text",
+      "id": "sub_1",
+      "label": "Kit 1: linha de apoio",
+      "default": "Free US shipping"
+    },
+    {
+      "type": "header",
+      "content": "Guia digital"
+    },
+    {
+      "type": "checkbox",
+      "id": "guia_confirmado",
+      "label": "Mencionar o guia digital como incluso",
+      "default": false,
+      "info": "Ligue só se o carrinho entregar o guia sem cobrar nos kits de 2 e 3 (brinde ou desconto na loja). O código desta seção não adiciona o guia ao carrinho."
+    },
+    {
+      "type": "product",
+      "id": "guia_produto",
+      "label": "Produto do guia (o preço vem dele)"
+    },
+    {
+      "type": "text",
+      "id": "guia_texto",
+      "label": "Texto do guia ({price} vira o preço)",
+      "default": "{price} guide included"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Holdwell: kits"
+    }
+  ]
+}
+{% endschema %}

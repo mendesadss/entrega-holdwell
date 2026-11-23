@@ -1,0 +1,64 @@
+{%- render 'gb-assets' -%}
+{%- assign s = section.settings -%}
+{%- if s.politica_confirmada -%}
+  <section class="gb gb-sec gb-ent" data-depende="politica">
+    <div class="gb-w">
+      <h2>{{ s.titulo | escape }}</h2>
+      <ol class="gb-tempo">
+        {%- for block in section.blocks -%}
+          <li {{ block.shopify_attributes }}><b>{{ block.settings.titulo | escape }}</b><span>{{ block.settings.texto | escape }}</span></li>
+        {%- endfor -%}
+      </ol>
+    </div>
+  </section>
+{%- else -%}
+  {%- render 'gb-aviso-editor', texto: 'Linha do tempo de entrega desligada. Ligue só se a política de envio e a de reembolso publicadas continuarem com estes prazos.' -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Holdwell: entrega",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "politica_confirmada",
+      "label": "Mostrar a linha do tempo",
+      "default": false,
+      "info": "Prazos da política publicada: envio em 1 a 3 dias úteis, chegada estimada de 7 a 12 dias úteis, devolução em até 30 dias depois da entrega. Ligue só se não mudaram."
+    },
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "From order to your door"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "etapa",
+      "name": "Etapa",
+      "settings": [
+        {
+          "type": "text",
+          "id": "titulo",
+          "label": "Quando",
+          "default": "Today"
+        },
+        {
+          "type": "text",
+          "id": "texto",
+          "label": "O quê",
+          "default": "You place your order"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Holdwell: entrega"
+    }
+  ]
+}
+{% endschema %}

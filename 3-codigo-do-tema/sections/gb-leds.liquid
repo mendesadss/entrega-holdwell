@@ -1,0 +1,81 @@
+{%- render 'gb-assets' -%}
+{%- assign s = section.settings -%}
+<section class="gb gb-sec gb-leds">
+  <div class="gb-w gb-macro">
+      <div>
+        <h2>{{ s.titulo | escape }}</h2>
+        {%- if s.texto != blank -%}<p class="gb-lead">{{ s.texto | escape }}</p>{%- endif -%}
+      </div>
+      <div class="gb-ph gb-macro__f is-5-4">
+        {%- render 'gb-foto', image: s.foto, alt: s.alt, recorte: s.recorte, fx: s.foco_x, fy: s.foco_y, sizes: '(min-width: 760px) 60vw, 100vw' -%}
+      </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Holdwell: LEDs de perto",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "Full-face coverage"
+    },
+    {
+      "type": "text",
+      "id": "texto",
+      "label": "Texto",
+      "default": "180 LED beads, from forehead to chin."
+    },
+    {
+      "type": "header",
+      "content": "Foto"
+    },
+    {
+      "type": "image_picker",
+      "id": "foto",
+      "label": "Foto"
+    },
+    {
+      "type": "text",
+      "id": "recorte",
+      "label": "Recorte da foto (x, y, largura, altura em %)",
+      "default": "0,0,100,77.99",
+      "info": "Área limpa da foto original da loja (o original tem texto gravado em parte da imagem). Ao trocar a foto, apague este campo. Vazio mostra a foto inteira."
+    },
+    {
+      "type": "range",
+      "id": "foco_x",
+      "label": "Foco horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "foco_y",
+      "label": "Foco vertical",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "text",
+      "id": "alt",
+      "label": "Texto alternativo da foto",
+      "default": "LED beads inside the mask, close up"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Holdwell: LEDs de perto"
+    }
+  ]
+}
+{% endschema %}

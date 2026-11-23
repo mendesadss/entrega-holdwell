@@ -1,0 +1,134 @@
+{%- render 'gb-assets' -%}
+{%- liquid
+  assign s = section.settings
+  assign g = s.guia_produto
+  if g != blank
+    assign guia_preco = g.price | money
+  endif
+-%}
+<section class="gb gb-sec gb-faq">
+  <div class="gb-w gb-faq__g">
+    <h2>{{ s.titulo | escape }}</h2>
+    <div>
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign mostrar = true
+          if block.type == 'pergunta_politica' and s.politica_confirmada != true
+            assign mostrar = false
+          endif
+          if block.type == 'pergunta_guia'
+            if s.guia_confirmado != true or g == blank
+              assign mostrar = false
+            endif
+          endif
+          assign resposta = block.settings.resposta
+          if block.type == 'pergunta_guia'
+            assign resposta = resposta | replace: '{price}', guia_preco
+          endif
+        -%}
+        {%- if mostrar -%}
+          <details {{ block.shopify_attributes }}{% if block.type != 'pergunta' %} data-depende="{% if block.type == 'pergunta_guia' %}guia{% else %}politica{% endif %}"{% endif %}>
+            <summary>{{ block.settings.pergunta | escape }}</summary>
+            <p>{{ resposta | escape }}</p>
+          </details>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Holdwell: perguntas",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "Questions"
+    },
+    {
+      "type": "checkbox",
+      "id": "politica_confirmada",
+      "label": "Mostrar as perguntas de entrega e devolução",
+      "default": false,
+      "info": "As respostas seguem a política de envio e a de reembolso publicadas. Ligue só se elas não mudaram."
+    },
+    {
+      "type": "checkbox",
+      "id": "guia_confirmado",
+      "label": "Mostrar a pergunta do guia digital",
+      "default": false,
+      "info": "Ligue só se o carrinho entregar o guia sem cobrar nos kits de 2 e 3."
+    },
+    {
+      "type": "product",
+      "id": "guia_produto",
+      "label": "Produto do guia (o preço vem dele)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pergunta",
+      "name": "Pergunta",
+      "settings": [
+        {
+          "type": "text",
+          "id": "pergunta",
+          "label": "Pergunta",
+          "default": "How do I use it?"
+        },
+        {
+          "type": "textarea",
+          "id": "resposta",
+          "label": "Resposta",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "type": "pergunta_politica",
+      "name": "Pergunta de entrega ou devolução",
+      "settings": [
+        {
+          "type": "text",
+          "id": "pergunta",
+          "label": "Pergunta",
+          "default": "How long does delivery take?"
+        },
+        {
+          "type": "textarea",
+          "id": "resposta",
+          "label": "Resposta",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "type": "pergunta_guia",
+      "name": "Pergunta do guia",
+      "settings": [
+        {
+          "type": "text",
+          "id": "pergunta",
+          "label": "Pergunta",
+          "default": "What is the digital guide?"
+        },
+        {
+          "type": "textarea",
+          "id": "resposta",
+          "label": "Resposta ({price} vira o preço do guia)",
+          "default": "The Zeraya Glow Companion, a {price} digital guide included with the 2 and 3 mask sets."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Holdwell: perguntas"
+    }
+  ]
+}
+{% endschema %}

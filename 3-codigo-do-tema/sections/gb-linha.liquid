@@ -1,0 +1,53 @@
+{%- render 'gb-assets' -%}
+{%- assign s = section.settings -%}
+<section class="gb gb-sec gb-linha">
+  <div class="gb-w">
+    <h2>{{ s.titulo | escape }}</h2>
+    {%- for block in section.blocks -%}
+      {%- assign p = block.settings.produto -%}
+      {%- if p != blank -%}
+        <a class="gb-li" href="{{ p.url }}" {{ block.shopify_attributes }}>{{ p.title | escape }}<span>{% if p.price_varies %}{{ s.a_partir | escape }} {% endif %}{{ p.price | money }}</span></a>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Holdwell: mais produtos",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "More for your routine"
+    },
+    {
+      "type": "text",
+      "id": "a_partir",
+      "label": "Texto antes do preço quando varia",
+      "default": "From"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "produto",
+      "name": "Produto",
+      "settings": [
+        {
+          "type": "product",
+          "id": "produto",
+          "label": "Produto"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Holdwell: mais produtos"
+    }
+  ]
+}
+{% endschema %}

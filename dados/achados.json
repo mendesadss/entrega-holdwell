@@ -1,0 +1,134 @@
+{
+  "loja": {
+    "dominio": "holdwellco.com",
+    "nome": "Holdwellco",
+    "nicho": "máscara facial de LED",
+    "pais": "US"
+  },
+  "data": "2026-11-23",
+  "nota": {
+    "de_0_a_10": 6.2,
+    "cobertura_pct": 95
+  },
+  "resumo": "A oferta é honesta e o preço é forte, mas as avaliações e a promessa de rugas colocam a loja em risco.",
+  "areas": {
+    "primeira_impressao": {
+      "status": "melhorar",
+      "frase": "O visual é organizado, mas a primeira foto da máscara parece amadora."
+    },
+    "produto": {
+      "status": "consertar",
+      "frase": "A página explica bem o produto, mas promete reduzir rugas sem prova."
+    },
+    "oferta": {
+      "status": "melhorar",
+      "frase": "Os kits têm conta certa, mas a oferta extra mostra um preço confuso."
+    },
+    "confianca": {
+      "status": "consertar",
+      "frase": "As avaliações têm fotos do AliExpress e textos em português numa loja americana."
+    },
+    "celular": {
+      "status": "bom",
+      "frase": "No celular tudo cabe na tela e o botão de comprar fica sempre visível."
+    },
+    "compra": {
+      "status": "melhorar",
+      "frase": "O carrinho não repete o frete grátis e a página demora para carregar."
+    }
+  },
+  "bom": [
+    "Nos kits de 2 e 3 máscaras a conta na tela fecha; falta conferir no carrinho.",
+    "A página avisa que a máscara é cosmética e diz quem não deve usar.",
+    "Frete, prazo e devolução de 30 dias aparecem perto do botão de comprar."
+  ],
+  "consertos": [
+    {
+      "titulo": "Tire as avaliações que vieram de outro site",
+      "hoje": "Parte das avaliações tem imagens hospedadas no AliExpress e há textos em português com nomes americanos. Confira a origem no app BK Reviews.",
+      "faca": "Abra o app de avaliações, confira a origem e apague todas que não vieram de clientes seus.",
+      "porque": "O cliente pode desconfiar, e avaliação copiada pode derrubar a loja no Google.",
+      "tempo": "rápido",
+      "print_loja": "../auditoria/prints/produto-390x844-avaliacoes.jpg"
+    },
+    {
+      "titulo": "Tire a promessa de reduzir rugas",
+      "hoje": "A faixa da página do produto diz que a máscara reduz rugas e linhas finas.",
+      "faca": "Troque a faixa por fatos: 7 modos de luz, 180 LEDs, sem fio, 10 minutos.",
+      "porque": "Sem estudo que comprove, essa promessa pode reprovar a loja e os anúncios.",
+      "tempo": "rápido",
+      "print_loja": "../auditoria/prints/produto-1440x900-2.jpg"
+    },
+    {
+      "titulo": "Troque os nomes que falam de tratamento",
+      "hoje": "O menu mostra Recovery, e coleções e kit usam Recovery e Relief, palavras que soam como tratamento de saúde.",
+      "faca": "Renomeie para Wind Down, Self-Care, Posture & Back Essentials e Comfort Kit. No Admin: Produtos, Coleções; menu em Loja virtual, Navegação.",
+      "porque": "O Google lê esses nomes como promessa de saúde, mesmo fora da página da máscara.",
+      "tempo": "rápido",
+      "print_loja": "../auditoria/prints/produto-1440x900-2.jpg"
+    },
+    {
+      "titulo": "Troque a primeira foto da máscara",
+      "hoje": "A primeira foto parece uma selfie, tem pouca nitidez e marca d'água no canto.",
+      "faca": "Coloque primeiro uma foto limpa da máscara e, em seguida, a máscara em uso.",
+      "porque": "A primeira foto decide se o cliente confia no produto e continua na página.",
+      "tempo": "médio",
+      "print_loja": "../auditoria/prints/produto-390x844.jpg"
+    },
+    {
+      "titulo": "Mostre o preço real da oferta extra",
+      "hoje": "O massageador diz 20% de desconto, mas mostra $49.90, que é o preço normal dele.",
+      "faca": "Mostre o preço com desconto, $39.92, ao lado do preço normal, se o desconto for real.",
+      "porque": "Quando a conta não fecha, o cliente desconfia da oferta inteira.",
+      "tempo": "rápido",
+      "print_loja": "../auditoria/prints/produto-390x844-2.jpg"
+    }
+  ],
+  "depois": [
+    "Repita no carrinho o frete grátis e a devolução de 30 dias.",
+    "Reduza o peso das imagens da página do produto para ela abrir mais rápido.",
+    "Confira se o preço antigo do Complete Relief Kit é a soma real dos itens.",
+    "Tire a oferta de 30 de novembro assim que a data passar.",
+    "Mostre no carrinho a frase de tamanho só em produto que tem tamanho.",
+    "Deixe uma oferta principal na tela, em vez de três ao mesmo tempo.",
+    "Suba a barra fixa do celular para ela não cobrir o fim do rodapé."
+  ],
+  "perguntas": [
+    "De onde vieram as 335 avaliações que estão no app hoje?",
+    "O desconto de 20% no massageador é aplicado de verdade no carrinho?",
+    "Você tem algum documento do fornecedor sobre os 180 LEDs e a segurança da máscara?"
+  ],
+  "referencias": [
+    {
+      "dominio": "solawave.co",
+      "motivo": "Marca forte de máscara de LED, boa para estudar organização e oferta.",
+      "produto_url": "https://solawave.co/products/wrinkle-retreat-pro-red-light-therapy-led-face-mask-infrared-fda-cleared"
+    },
+    {
+      "dominio": "swirise.com",
+      "motivo": "Vende máscara de LED com anúncios no ar e página longa e visual.",
+      "produto_url": "https://swirise.com/products/swirise-led-red-light-therapy-face-mask"
+    },
+    {
+      "dominio": "lumenvira.com",
+      "motivo": "Vende máscara de 7 cores como a sua, com galeria limpa.",
+      "produto_url": "https://lumenvira.com/products/glowence-led-light-face-mask-2"
+    },
+    {
+      "dominio": "irish-supply.com",
+      "motivo": "Tem a máscara de preço mais próximo do seu, com kits por nível.",
+      "produto_url": "https://irish-supply.com/products/dermalume-multi-colour-light-therapy-mask"
+    },
+    {
+      "dominio": "kenzzi.com",
+      "motivo": "Loja focada em LED, com página curta e visual limpo.",
+      "produto_url": "https://kenzzi.com/products/kenzzi-led-light-therapy-mask"
+    }
+  ],
+  "nao_medido": [
+    "Não abrimos a finalização de compra nem fizemos pedido de teste.",
+    "Não vimos os e-mails e o que acontece depois da compra.",
+    "Não testamos no carrinho o total dos kits de 2 e 3 máscaras.",
+    "A loja Apeborn bloqueou os prints, então entrou só com o preço dela."
+  ]
+}

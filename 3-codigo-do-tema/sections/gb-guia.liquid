@@ -1,0 +1,63 @@
+{%- render 'gb-assets' -%}
+{%- liquid
+  assign s = section.settings
+  assign g = s.guia_produto
+-%}
+{%- if s.guia_confirmado and g != blank -%}
+  {%- assign preco = g.price | money -%}
+  <section class="gb gb-sec gb-guia" data-depende="guia">
+    <div class="gb-w gb-guia__g">
+      <div class="gb-capa">{{ g.title | escape }}<small>{{ s.legenda | escape }}</small></div>
+      <div>
+        <h2>{{ s.titulo | replace: '{price}', preco | escape }}</h2>
+        <p class="gb-lead" style="margin-top:16px">{{ s.texto | escape }}</p>
+      </div>
+    </div>
+  </section>
+{%- else -%}
+  {%- render 'gb-aviso-editor', texto: 'Guia digital desligado. Ligue só se o carrinho entregar o guia sem cobrar nos kits de 2 e 3 máscaras.' -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Holdwell: guia digital",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "guia_confirmado",
+      "label": "Mostrar o guia",
+      "default": false,
+      "info": "A frase diz que o guia vem de graça nos kits de 2 e 3. O código do tema não adiciona o guia ao carrinho: isso tem de vir de brinde ou desconto da loja. Confirmar no carrinho antes de ligar."
+    },
+    {
+      "type": "product",
+      "id": "guia_produto",
+      "label": "Produto do guia (nome e preço vêm dele)"
+    },
+    {
+      "type": "text",
+      "id": "legenda",
+      "label": "Legenda da capa",
+      "default": "Digital guide"
+    },
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título ({price} vira o preço)",
+      "default": "A {price} guide, included"
+    },
+    {
+      "type": "text",
+      "id": "texto",
+      "label": "Texto",
+      "default": "Comes with the 2 and 3 mask sets."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Holdwell: guia digital"
+    }
+  ]
+}
+{% endschema %}

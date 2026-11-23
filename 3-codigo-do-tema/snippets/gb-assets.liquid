@@ -1,0 +1,11 @@
+{%- comment -%}
+  Carrega as fontes (Fraunces e Inter), o CSS e o JS da Holdwellco. Chamado por todas as seções gb-*.
+  O navegador não baixa duas vezes o mesmo arquivo; o JS trava a si mesmo se for incluído mais de uma vez.
+{%- endcomment -%}
+{%- # theme-check-disable RemoteAsset -%}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Inter:wght@400;500;600&display=swap">
+{%- # theme-check-enable RemoteAsset -%}
+{{ 'gb-loja.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'gb-loja.js' | asset_url }}" defer="defer"></script>

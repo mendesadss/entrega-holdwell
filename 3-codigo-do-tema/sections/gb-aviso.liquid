@@ -1,0 +1,34 @@
+{%- render 'gb-assets' -%}
+{%- assign s = section.settings -%}
+{%- if s.ativo and s.texto != blank -%}
+  <div class="gb gb-aviso" data-depende="politica"><p>{{ s.texto | escape }}</p></div>
+{%- else -%}
+  {%- render 'gb-aviso-editor', texto: 'Faixa de aviso desligada. Ligue só depois de conferir o texto com as políticas publicadas (frete e devolução).' -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Holdwell: aviso",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "ativo",
+      "label": "Mostrar a faixa",
+      "default": false,
+      "info": "Frete grátis a partir de $49 e 30 dias de devolução saem da política publicada. Ligue só se a política continuar com esses termos."
+    },
+    {
+      "type": "text",
+      "id": "texto",
+      "label": "Texto",
+      "default": "Free US shipping from $49. 30-day returns."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Holdwell: aviso"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,331 @@
+{
+  "status": "ok",
+  "url_final": "https://holdwellco.com/",
+  "tema": {
+    "nome": "Dawn migraçao",
+    "schema_name": "Dawn",
+    "theme_store_id": 887,
+    "customizado": false
+  },
+  "apps": [],
+  "produtos": [
+    {
+      "handle": "zeraya-glow-companion",
+      "titulo": "The Zeraya Glow Companion (Digital Guide)",
+      "preco_minimo": 14.9,
+      "preco_comparado": null,
+      "variantes": 1,
+      "tipo": "Digital guide",
+      "fisico": false,
+      "imagens": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/Capa_do_guia_NOVA_2.png?v=1795355210",
+          "width": 1632,
+          "height": 2112
+        }
+      ],
+      "imagens_total": 1
+    },
+    {
+      "handle": "heated-ankle-massager",
+      "titulo": "Heated Ankle Massager",
+      "preco_minimo": 69.9,
+      "preco_comparado": null,
+      "variantes": 1,
+      "tipo": "Ankle Massager",
+      "fisico": true,
+      "imagens": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-heated-ankle-massager-10-fastening-closeup.webp?v=1792450652",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-heated-ankle-massager-01-evening-sofa.jpg?v=1792449442",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-heated-ankle-massager-13-boucle-product.jpg?v=1792449445",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-heated-ankle-massager-14-control-panel-macro.jpg?v=1792449450",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-ankle-02-features_83d1b9d8-8f7d-425b-ae1b-d4cbb4928167.png?v=1792434094",
+          "width": 1000,
+          "height": 1000
+        }
+      ],
+      "imagens_total": 11
+    },
+    {
+      "handle": "led-glow-mask",
+      "titulo": "Holdwellco Zeraya LED Face Mask",
+      "preco_minimo": 59.99,
+      "preco_comparado": null,
+      "variantes": 1,
+      "tipo": "LED Face Mask",
+      "fisico": true,
+      "imagens": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-led-capa-uau-01.jpg?v=1795213821",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mascara-led-perfil-lateral-fundo-creme.webp?v=1791689383",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mascara-led-lifestyle-cama-fones-livro-fechado.png?v=1791689388",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mascara-led-sete-cores-quadrado.png?v=1791689390",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mascara-led-macro-interior-vermelho.png?v=1791689394",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "imagens_total": 11
+    },
+    {
+      "handle": "led-neck-face-massager",
+      "titulo": "LED Neck & Face Massager",
+      "preco_minimo": 49.9,
+      "preco_comparado": null,
+      "variantes": 2,
+      "tipo": "LED Massager",
+      "fisico": true,
+      "imagens": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-led-lifestyle-01.jpg?v=1790963367",
+          "width": 1024,
+          "height": 1280
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-led-benefits-03.jpg?v=1790965155",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-led-colors-01.jpg?v=1790967135",
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-led-02.jpg?v=1790958868",
+          "width": 1191,
+          "height": 1199
+        }
+      ],
+      "imagens_total": 4
+    },
+    {
+      "handle": "complete-relief-kit",
+      "titulo": "Complete Relief Kit",
+      "preco_minimo": 99.9,
+      "preco_comparado": 139.79,
+      "variantes": 1,
+      "tipo": "Bundle",
+      "fisico": true,
+      "imagens": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-kit-capa-lifestyle.jpg?v=1794061139",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-kit-inside.jpg?v=1790813055",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-kit-routine.jpg?v=1790813060",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-mulher-preto-cozinha_ea91edb3-2447-4ce4-bdbd-780e7e4359e8.webp?v=1790813063",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-alongador-the-product_4e6ddde7-3562-4215-a66f-feddf02aa4d2.webp?v=1790813066",
+          "width": 1080,
+          "height": 1350
+        }
+      ],
+      "imagens_total": 6
+    },
+    {
+      "handle": "neck-shoulder-massager",
+      "titulo": "Neck & Shoulder Massager",
+      "preco_minimo": 34.9,
+      "preco_comparado": null,
+      "variantes": 1,
+      "tipo": "Massager",
+      "fisico": true,
+      "imagens": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-massageador-06-sem-faixa.webp?v=1790636508",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-massageador-04-com-copy.webp?v=1790636578",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-massageador-bonus-lifestyle-corrigida.webp?v=1790625393",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-massageador-08-com-copy.webp?v=1790636579",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-massageador-03-corrigida.webp?v=1790625393",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "imagens_total": 6
+    },
+    {
+      "handle": "back-stretcher-bump",
+      "titulo": "Back Stretcher",
+      "preco_minimo": 39.99,
+      "preco_comparado": null,
+      "variantes": 1,
+      "tipo": "Back Stretcher",
+      "fisico": true,
+      "imagens": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-alongador-01-v2.webp?v=1790806028",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-alongador-02.webp?v=1790806031",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-alongador-03-com-copy.png?v=1790806034",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-alongador-08-com-copy.png?v=1790806038",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-alongador-07.webp?v=1790806042",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "imagens_total": 5
+    },
+    {
+      "handle": "posture-corrector-core",
+      "titulo": "Posture Corrector",
+      "preco_minimo": 64.9,
+      "preco_comparado": null,
+      "variantes": 10,
+      "tipo": "Posture Corrector",
+      "fisico": true,
+      "imagens": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/02-model-adjustment.webp?v=1789610581",
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-foto2-mulher-perfil-sala_366d44d8-6ee3-4c89-b6ef-34d643f3869a.webp?v=1794423743",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/03_mulher_ajustando_corretor.webp?v=1791906650",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/Imagem_do_Codex_23_de_set._de_2026_15_23_37.png?v=1790191980",
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0780/8817/5808/files/holdwell-foto1-homem-academia-costas_b4ab726c-9c5e-4604-8c12-b4e2b92516da.webp?v=1794423742",
+          "width": 1080,
+          "height": 1350
+        }
+      ],
+      "imagens_total": 8
+    }
+  ],
+  "catalogo_truncado": false,
+  "colecoes": [
+    {
+      "handle": "neck-shoulder",
+      "titulo": "Neck & Shoulder",
+      "products_count": 1
+    },
+    {
+      "handle": "posture-back",
+      "titulo": "Posture & Back",
+      "products_count": 2
+    },
+    {
+      "handle": "posture-relief",
+      "titulo": "Posture & Back Relief",
+      "products_count": 4
+    },
+    {
+      "handle": "frontpage",
+      "titulo": "Página inicial",
+      "products_count": 1
+    },
+    {
+      "handle": "recovery",
+      "titulo": "Recovery",
+      "products_count": 2
+    },
+    {
+      "handle": "self-care",
+      "titulo": "Self-Care & Recovery",
+      "products_count": 3
+    },
+    {
+      "handle": "all",
+      "titulo": "Shop All",
+      "products_count": 8
+    }
+  ],
+  "politicas": {
+    "refund-policy": "existe",
+    "shipping-policy": "existe",
+    "privacy-policy": "existe",
+    "terms-of-service": "existe"
+  },
+  "robots_bloqueia_products": false,
+  "observacoes": [],
+  "coletado_em": "2026-11-23T14:05:02.066Z"
+}

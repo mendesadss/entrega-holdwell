@@ -1,0 +1,36 @@
+{%- render 'gb-assets' -%}
+<section class="gb gb-fatos">
+  <div class="gb-w gb-fatos__in">
+    {%- for block in section.blocks -%}
+      <div class="gb-fato" {{ block.shopify_attributes }}>{{ block.settings.texto | escape }}</div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Holdwell: fatos",
+  "tag": "section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "fato",
+      "name": "Fato",
+      "settings": [
+        {
+          "type": "text",
+          "id": "texto",
+          "label": "Texto",
+          "default": "7 light modes"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Holdwell: fatos"
+    }
+  ]
+}
+{% endschema %}

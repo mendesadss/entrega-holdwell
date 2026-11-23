@@ -1,0 +1,12 @@
+{%- comment -%}
+  Ícones em linha. Parâmetros: name (cart, check, menu) e size (padrão 22).
+{%- endcomment -%}
+{%- assign gb_size = size | default: 22 -%}
+{%- case name -%}
+  {%- when 'cart' -%}
+    <svg class="gb-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="{{ gb_size }}" height="{{ gb_size }}" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l1 12H5z"></path><path d="M9 8V6.5a3 3 0 016 0V8"></path></svg>
+  {%- when 'check' -%}
+    <svg class="gb-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="{{ gb_size }}" height="{{ gb_size }}" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+  {%- when 'menu' -%}
+    <svg class="gb-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="{{ gb_size }}" height="{{ gb_size }}" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
+{%- endcase -%}

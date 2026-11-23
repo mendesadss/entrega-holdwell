@@ -1,0 +1,120 @@
+{%- render 'gb-assets' -%}
+{%- assign s = section.settings -%}
+{%- assign p = s.produto | default: product -%}
+<section class="gb gb-sec gb-caixa">
+  <div class="gb-w gb-caixa__g">
+    <div class="gb-ph gb-caixa__f">
+      {%- render 'gb-foto', image: s.foto, alt: s.alt, recorte: s.recorte, fx: s.foco_x, fy: s.foco_y, sizes: '(min-width: 760px) 55vw, 100vw' -%}
+    </div>
+    <div>
+      <h2>{{ s.titulo | escape }}</h2>
+      <ul class="gb-lista">
+        {%- for block in section.blocks -%}
+          <li {{ block.shopify_attributes }}>{{ block.settings.texto | escape }}</li>
+        {%- endfor -%}
+      </ul>
+      {%- if p != blank -%}
+        <div class="gb-cx-p">{{ p.price | money }}</div>
+        {%- if request.page_type == 'product' -%}
+          <a class="gb-btn" href="#comprar">{{ s.botao_produto | escape }}</a>
+        {%- else -%}
+          <a class="gb-btn" href="{{ p.url }}">{{ s.botao | escape }}</a>
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Holdwell: na caixa",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "In the box"
+    },
+    {
+      "type": "product",
+      "id": "produto",
+      "label": "Produto (o preço vem dele; na página do produto, vazio usa o produto da página)"
+    },
+    {
+      "type": "text",
+      "id": "botao",
+      "label": "Botão na home",
+      "default": "Shop the mask"
+    },
+    {
+      "type": "text",
+      "id": "botao_produto",
+      "label": "Botão na página do produto",
+      "default": "Choose your set"
+    },
+    {
+      "type": "header",
+      "content": "Foto"
+    },
+    {
+      "type": "image_picker",
+      "id": "foto",
+      "label": "Foto"
+    },
+    {
+      "type": "text",
+      "id": "recorte",
+      "label": "Recorte da foto (x, y, largura, altura em %)",
+      "default": "0,13.96,100,86.04",
+      "info": "Área limpa da foto original da loja (o original tem texto gravado em parte da imagem). Ao trocar a foto, apague este campo. Vazio mostra a foto inteira."
+    },
+    {
+      "type": "range",
+      "id": "foco_x",
+      "label": "Foco horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "foco_y",
+      "label": "Foco vertical",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "text",
+      "id": "alt",
+      "label": "Texto alternativo da foto",
+      "default": "Mask, strap, USB-C cable and manual laid out flat"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "texto",
+          "label": "Texto",
+          "default": "LED face mask"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Holdwell: na caixa"
+    }
+  ]
+}
+{% endschema %}

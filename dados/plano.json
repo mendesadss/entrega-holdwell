@@ -1,0 +1,109 @@
+{
+  "loja": "holdwellco.com",
+  "tema_atual": {
+    "nome": "Dawn migraçao",
+    "versao": "16.1.1"
+  },
+  "nome_tema_novo": "Global Brand otimizado 2026-11-23",
+  "mudancas": [
+    {
+      "id": "M1",
+      "conserto": 1,
+      "pagina": "todas",
+      "tipo": "admin_manual",
+      "o_que": "Conferir a origem das 335 avaliações no app BK Reviews e remover todas que não vieram de clientes reais da loja, na página do produto e na coleção.",
+      "por_que": "O widget carrega 40 imagens do AliExpress e mostra textos em português com nomes americanos. As estrelas também aparecem na página da coleção. Avaliação importada engana o cliente e arrisca a aprovação no Google.",
+      "como": "Pedir ao dono para abrir o app no Admin e exportar a lista com origem e data. Mostrar quantas têm pedido real ligado. Só depois do sim dele, remover as importadas. Não apagar nada sem o sim. Não esconder só por CSS.",
+      "pronto_quando": "A página do produto e a coleção mostram apenas avaliações ligadas a pedidos reais, ou nenhuma estrela e nenhum contador se não houver.",
+      "precisa_confirmar": true
+    },
+    {
+      "id": "M2",
+      "conserto": 2,
+      "pagina": "produto",
+      "tipo": "tema",
+      "o_que": "Remover da faixa da página do produto as frases sobre rugas e linhas finas.",
+      "por_que": "A loja não tem evidência desse efeito e a própria página declara que o aparelho é cosmético.",
+      "como": "No tema duplicado, o template product.<sufixo>.json nasce só com fatos: 7 light modes, 180 LEDs, Cordless USB-C, 10 minutes a day. Não usar reduce, wrinkles, fine lines, collagen, acne, anti-aging, heal, treat ou clinically.",
+      "pronto_quando": "A busca por wrinkle e fine lines no texto renderizado da prévia devolve zero.",
+      "precisa_confirmar": false
+    },
+    {
+      "id": "M3",
+      "conserto": 3,
+      "pagina": "todas",
+      "tipo": "admin_manual",
+      "o_que": "Renomear Recovery, Self-Care & Recovery, Posture & Back Relief e Complete Relief Kit para nomes sem promessa de tratamento, e trocar a descrição da coleção que começa com \"Relief for a tight neck and shoulders\".",
+      "por_que": "Relief e recovery são lidos como alegação de saúde, no nome e na descrição.",
+      "como": "Propor ao dono nomes únicos, sem repetir nenhuma coleção que já existe: Recovery para Wind Down; Self-Care & Recovery para Self-Care; Posture & Back Relief para Posture & Back Essentials (a coleção Posture & Back já existe); Complete Relief Kit para Complete Comfort Kit. Na descrição da coleção, trocar \"Relief for a tight neck and shoulders after long days at the desk.\" por uma frase de uso, como \"Massagers for long days at the desk.\" (conferir a descrição de cada coleção renomeada). Mudar só títulos, descrições e menu, manter os handles para não quebrar links. Vale ao vivo, então só com o sim.",
+      "pronto_quando": "Menu, coleções, descrições de coleção e título do kit não têm relief nem recovery, nenhuma coleção repete o nome de outra, e os links antigos continuam abrindo.",
+      "precisa_confirmar": true
+    },
+    {
+      "id": "M4",
+      "conserto": 4,
+      "pagina": "produto",
+      "tipo": "produto",
+      "o_que": "Trocar a primeira foto da galeria por holdwell-mascara-led-perfil-lateral-fundo-creme.webp, uma foto limpa da máscara sem marca d'água, e usar a foto em uso como segunda.",
+      "por_que": "A foto atual parece selfie e tem baixa resolução.",
+      "como": "A galeria do desenho é feita de blocos da seção gb-compra: o bloco b1 usa o arquivo holdwell-mascara-led-perfil-lateral-fundo-creme.webp e a foto do criado-mudo passa a ser o b2. A mídia do produto na loja só muda com o sim do dono: mostrar a lista, esperar o sim, subir e reordenar a mídia para essa foto ficar em primeiro. Foto de produto vale no Google na hora.",
+      "pronto_quando": "A primeira foto no celular e no computador é nítida, sem marca d'água e mostra a máscara real.",
+      "precisa_confirmar": true
+    },
+    {
+      "id": "M5",
+      "conserto": 5,
+      "pagina": "produto",
+      "tipo": "preco",
+      "o_que": "Mostrar o preço real da oferta extra do massageador.",
+      "por_que": "A tela diz 20% off e mostra $49.90, que é o preço cheio.",
+      "como": "Perguntar ao dono se o desconto é aplicado no carrinho. Se sim, mostrar $39.92 e o preço normal $49.90. Se não, tirar o texto de 20% off e manter $49.90.",
+      "pronto_quando": "O preço da tela é igual ao do carrinho com os dois itens.",
+      "precisa_confirmar": true
+    },
+    {
+      "id": "M6",
+      "conserto": 0,
+      "pagina": "carrinho",
+      "tipo": "tema",
+      "o_que": "Repetir no carrinho o frete grátis acima de $49 e a devolução de 30 dias, e mostrar a frase sobre mudar o tamanho só quando o carrinho tiver produto com opção de tamanho.",
+      "por_que": "O carrinho hoje não confirma o que a página do produto prometeu e fala de tamanho para uma máscara que não tem tamanho.",
+      "como": "No tema duplicado, abrir os arquivos do carrinho do Dawn (sections/main-cart-footer.liquid, sections/main-cart-items.liquid e snippets/cart-drawer.liquid; se a frase não estiver neles, procurar em locales/en.default.json ou no app que a injeta). Acrescentar um bloco abaixo do total usando os termos da política publicada. Mostrar a frase de tamanho só se algum item tiver produto com opção de tamanho (o Posture Corrector tem 10 variantes); com a máscara, que não tem tamanho, ela não aparece.",
+      "pronto_quando": "O carrinho com 1 máscara mostra frete grátis e 30 dias, sem falar de tamanho. Com o Posture Corrector, a frase de tamanho continua aparecendo.",
+      "precisa_confirmar": false
+    },
+    {
+      "id": "M7",
+      "conserto": 0,
+      "pagina": "produto",
+      "tipo": "tema",
+      "o_que": "Deixar uma oferta principal na primeira tela: 1 máscara e o botão, com os cartões de 2 e 3 máscaras só depois do sim do dono.",
+      "por_que": "Três ofertas juntas confundem o cliente.",
+      "como": "Com os kits desligados (estado normal deste pacote, não é divergência do desenho), a primeira tela mostra nome, preço de $59.99 e o botão. Os cartões de $101.98 (2 máscaras) e $125.98 (3 máscaras) só entram depois do sim do dono e dos totais conferidos no carrinho: criar os 2 descontos automáticos (15% e 30%), conferir o endsAt e os totais, e só então ligar kits_confirmados nas seções gb-compra e gb-oferta. Sem desconto automático, a tela diria $101.98 e o carrinho cobraria $119.98. O guia entra como item do cartão só se o carrinho o entregar, e o massageador desce para depois do botão. A promoção nasce desligada no tema.",
+      "pronto_quando": "Com os kits desligados, a primeira tela do celular mostra nome, preço, 1 máscara e botão, sem parágrafo antes do botão. Os cartões só aparecem depois do sim e dos totais conferidos no carrinho.",
+      "precisa_confirmar": true
+    },
+    {
+      "id": "M8",
+      "conserto": 0,
+      "pagina": "produto",
+      "tipo": "tema",
+      "o_que": "Reduzir o peso da página do produto.",
+      "por_que": "A página tem 9 MB e 320 requisições, e demora para mostrar a foto principal.",
+      "como": "Usar image_url com largura certa e srcset, carregar sob demanda tudo abaixo da primeira tela e não carregar as imagens externas do widget de avaliações.",
+      "pronto_quando": "A prévia baixa menos da metade do peso atual no celular.",
+      "precisa_confirmar": false
+    },
+    {
+      "id": "M9",
+      "conserto": 0,
+      "pagina": "produto",
+      "tipo": "preco",
+      "o_que": "Conferir o preço comparado do Complete Relief Kit e a data da oferta de 30 de novembro.",
+      "por_que": "Preço antigo só vale se for real, e oferta com data não pode voltar depois de vencer.",
+      "como": "Somar os itens do kit e comparar com $139.79. Mostrar ao dono. Tirar o preço comparado se não fechar. Remover o aviso da oferta quando a data passar.",
+      "pronto_quando": "O preço comparado é a soma real dos itens, ou está vazio, e nenhuma oferta vencida aparece.",
+      "precisa_confirmar": true
+    }
+  ]
+}

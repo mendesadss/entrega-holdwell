@@ -1,0 +1,55 @@
+{%- render 'gb-assets' -%}
+{%- assign s = section.settings -%}
+{%- if s.politica_confirmada -%}
+  <section class="gb gb-sinais" data-depende="politica">
+    <div class="gb-w gb-sinais__in">
+      {%- for block in section.blocks -%}
+        <div class="gb-sinal" {{ block.shopify_attributes }}>{{ block.settings.titulo | escape }}<span>{{ block.settings.texto | escape }}</span></div>
+      {%- endfor -%}
+    </div>
+  </section>
+{%- else -%}
+  {%- render 'gb-aviso-editor', texto: 'Frete, prazo e devolução desligados. Ligue só se a política de envio e a de reembolso publicadas continuarem com estes termos.' -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Holdwell: garantias",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "politica_confirmada",
+      "label": "Mostrar frete, prazo e devolução",
+      "default": false,
+      "info": "Texto da política publicada: frete grátis em pedidos de $49 ou mais, envio em 1 a 3 dias úteis, chegada estimada de 7 a 12 dias úteis nos EUA, devolução em até 30 dias depois da entrega."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "sinal",
+      "name": "Sinal",
+      "settings": [
+        {
+          "type": "text",
+          "id": "titulo",
+          "label": "Título",
+          "default": "Free US shipping"
+        },
+        {
+          "type": "text",
+          "id": "texto",
+          "label": "Texto",
+          "default": "On orders from $49"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Holdwell: garantias"
+    }
+  ]
+}
+{% endschema %}

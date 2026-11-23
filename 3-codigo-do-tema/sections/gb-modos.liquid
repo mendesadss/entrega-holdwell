@@ -1,0 +1,72 @@
+{%- render 'gb-assets' -%}
+{%- assign s = section.settings -%}
+<section class="gb gb-sec gb-modos">
+  <div class="gb-w">
+    <h2>{{ s.titulo | escape }}</h2>
+    <div class="gb-modos__g">
+      {%- for block in section.blocks -%}
+        {%- assign cor_l = block.settings.nome | downcase -%}
+        {%- assign alt_txt = s.alt_modelo | replace: '{cor}', cor_l -%}
+        <div class="gb-modo" {{ block.shopify_attributes }}>
+          <div class="gb-ph gb-modo__f">
+            {%- render 'gb-foto', image: s.foto, alt: alt_txt, recorte: block.settings.recorte, fx: 50, fy: 50, sizes: '(min-width: 760px) 70vw, 100vw' -%}
+          </div>
+          <span>{{ block.settings.nome | escape }}</span>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Holdwell: sete modos",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "One mask. Seven lights."
+    },
+    {
+      "type": "text",
+      "id": "alt_modelo",
+      "label": "Texto alternativo ({cor} vira o nome da cor)",
+      "default": "Mask in {cor} light"
+    },
+    {
+      "type": "image_picker",
+      "id": "foto",
+      "label": "Foto com as sete cores (cada cor é um recorte)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "modo",
+      "name": "Cor",
+      "settings": [
+        {
+          "type": "text",
+          "id": "nome",
+          "label": "Nome da cor",
+          "default": "Red"
+        },
+        {
+          "type": "text",
+          "id": "recorte",
+          "label": "Recorte na foto (x, y, largura, altura em %)",
+          "default": "",
+          "info": "Área da foto com esta cor. Ao trocar a foto, refaça o recorte."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 7,
+  "presets": [
+    {
+      "name": "Holdwell: sete modos"
+    }
+  ]
+}
+{% endschema %}

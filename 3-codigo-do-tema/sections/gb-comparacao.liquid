@@ -1,0 +1,91 @@
+{%- render 'gb-assets' -%}
+{%- assign s = section.settings -%}
+{%- if s.ativo -%}
+  <section class="gb gb-sec gb-compara" data-depende="comparacao">
+    <div class="gb-w">
+      <h2>{{ s.titulo | escape }}</h2>
+      <table class="gb-fatia">
+        <thead><tr><th scope="col"><span class="gb-sr">{{ s.col_tema | escape }}</span></th><th scope="col">{{ s.col_outras | escape }}</th><th scope="col">{{ s.col_nos | escape }}</th></tr></thead>
+        <tbody>
+          {%- for block in section.blocks -%}
+            <tr {{ block.shopify_attributes }}><th scope="row">{{ block.settings.tema | escape }}</th><td>{{ block.settings.outras | escape }}</td><td>{{ block.settings.nos | escape }}</td></tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+  </section>
+{%- else -%}
+  {%- render 'gb-aviso-editor', texto: 'Tabela de comparação desligada. Ligue só depois de resolver o preço comparado do kit completo e a oferta com data, e de aprovar o texto.' -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Holdwell: comparação",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "ativo",
+      "label": "Mostrar a tabela",
+      "default": false,
+      "info": "As frases dizem que a loja tem um preço real e nenhum contador. Só ligue se isso for verdade na loja inteira (preço comparado do kit completo e aviso com data de Black Friday conferidos)."
+    },
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "Plain facts, no theater."
+    },
+    {
+      "type": "text",
+      "id": "col_tema",
+      "label": "Leitor de tela: coluna do tema",
+      "default": "Topic"
+    },
+    {
+      "type": "text",
+      "id": "col_outras",
+      "label": "Coluna das outras lojas",
+      "default": "Many LED mask stores"
+    },
+    {
+      "type": "text",
+      "id": "col_nos",
+      "label": "Coluna da loja",
+      "default": "Holdwellco"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "linha",
+      "name": "Linha",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tema",
+          "label": "Tema",
+          "default": "Price"
+        },
+        {
+          "type": "text",
+          "id": "outras",
+          "label": "Outras lojas",
+          "default": "Inflated \"was\" price"
+        },
+        {
+          "type": "text",
+          "id": "nos",
+          "label": "Esta loja",
+          "default": "One real price"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Holdwell: comparação"
+    }
+  ]
+}
+{% endschema %}

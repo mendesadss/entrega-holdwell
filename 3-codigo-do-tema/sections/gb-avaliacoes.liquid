@@ -1,0 +1,45 @@
+{%- render 'gb-assets' -%}
+{%- assign s = section.settings -%}
+{%- if s.ativo -%}
+  <section class="gb gb-rev" data-depende="avaliacoes-reais">
+    <div class="gb-w">
+      <h2>{{ s.titulo | escape }}</h2>
+      {%- if s.texto != blank -%}<p>{{ s.texto | escape }}</p>{%- endif -%}
+    </div>
+  </section>
+{%- else -%}
+  {%- render 'gb-aviso-editor', texto: 'Avaliações desligadas e vazias. Ligue só quando houver avaliação ligada a pedido real (plano M1).' -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Holdwell: avaliações",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "ativo",
+      "label": "Mostrar",
+      "default": false,
+      "info": "Nasce desligada e vazia. Esta seção não carrega o widget de avaliações do app. Ligue só com avaliação real de pedido (plano M1); sem nota, sem estrela e sem número."
+    },
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "Reviews"
+    },
+    {
+      "type": "text",
+      "id": "texto",
+      "label": "Texto reservado",
+      "default": "Reviews from verified orders will appear here."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Holdwell: avaliações"
+    }
+  ]
+}
+{% endschema %}

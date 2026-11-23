@@ -1,0 +1,36 @@
+{%- render 'gb-assets' -%}
+{%- assign s = section.settings -%}
+<section class="gb gb-sec gb-cuidado">
+  <div class="gb-w">
+    <div class="gb-seguro">
+      <h3>{{ s.titulo | escape }}</h3>
+      <p>{{ s.texto | escape }}</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Holdwell: cuidado",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "Before you start"
+    },
+    {
+      "type": "textarea",
+      "id": "texto",
+      "label": "Texto",
+      "default": "Cosmetic device, not a medical device. Results vary. Keep your eyes closed during use. Do not use if you are pregnant, have epilepsy or a light-sensitive condition, or take medication that makes you sensitive to light. Check with your doctor if you are unsure."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Holdwell: cuidado"
+    }
+  ]
+}
+{% endschema %}

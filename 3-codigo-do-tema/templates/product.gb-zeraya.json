@@ -1,0 +1,616 @@
+{
+  "sections": {
+    "aviso": {
+      "type": "gb-aviso",
+      "settings": {}
+    },
+    "cabecalho": {
+      "type": "gb-cabecalho",
+      "settings": {
+        "logo": "shopify://shop_images/holdwell-logo_png.png"
+      },
+      "blocks": {
+        "b1": {
+          "type": "link",
+          "settings": {
+            "texto": "LED Mask",
+            "url": "/products/led-glow-mask"
+          }
+        },
+        "b2": {
+          "type": "link",
+          "settings": {
+            "texto": "Neck & Shoulder",
+            "url": "/collections/neck-shoulder"
+          }
+        },
+        "b3": {
+          "type": "link",
+          "settings": {
+            "texto": "Posture & Back",
+            "url": "/collections/posture-back"
+          }
+        },
+        "b4": {
+          "type": "link",
+          "settings": {
+            "texto": "Shop All",
+            "url": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ]
+    },
+    "compra": {
+      "type": "gb-compra",
+      "settings": {
+        "produto": "led-glow-mask",
+        "adicional_produto": "led-neck-face-massager",
+        "guia_produto": "zeraya-glow-companion"
+      },
+      "blocks": {
+        "b1": {
+          "type": "foto",
+          "settings": {
+            "foto": "shopify://shop_images/holdwell-mascara-led-perfil-lateral-fundo-creme.webp",
+            "recorte": "2.95,2.95,94.02,94.02",
+            "foco_x": 50,
+            "foco_y": 50,
+            "alt": "Side view of the white mask",
+            "rotulo": "Side view of the white mask"
+          }
+        },
+        "b2": {
+          "type": "foto",
+          "settings": {
+            "foto": "shopify://shop_images/holdwell-mascara-led-still-life-criado-mudo.png",
+            "recorte": "0,0,100,76.95",
+            "foco_x": 60,
+            "foco_y": 70,
+            "alt": "Zeraya LED Face Mask on a nightstand",
+            "rotulo": "Mask on a nightstand"
+          }
+        },
+        "b3": {
+          "type": "foto",
+          "settings": {
+            "foto": "shopify://shop_images/holdwell-mascara-led-lifestyle-cama-fones-livro-fechado.png",
+            "recorte": "21.93,0,78.07,81.98",
+            "foco_x": 50,
+            "foco_y": 30,
+            "alt": "Mask in use in bed",
+            "rotulo": "Mask in use in bed"
+          }
+        },
+        "b4": {
+          "type": "foto",
+          "settings": {
+            "foto": "shopify://shop_images/holdwell-mascara-led-lifestyle-mulher-madura-roxo.png",
+            "recorte": "7.97,1.99,72.01,77.99",
+            "foco_x": 50,
+            "foco_y": 20,
+            "alt": "Mask in purple light",
+            "rotulo": "Mask in purple light"
+          }
+        },
+        "b5": {
+          "type": "foto",
+          "settings": {
+            "foto": "shopify://shop_images/holdwell-mascara-led-macro-interior-vermelho.png",
+            "recorte": "0,0,100,77.99",
+            "foco_x": 50,
+            "foco_y": 50,
+            "alt": "LEDs up close",
+            "rotulo": "LEDs up close"
+          }
+        },
+        "b6": {
+          "type": "foto",
+          "settings": {
+            "foto": "shopify://shop_images/holdwell-mascara-led-ajuste-faixa-cinza.png",
+            "recorte": "0,0,100,71.93",
+            "foco_x": 50,
+            "foco_y": 40,
+            "alt": "Adjusting the strap",
+            "rotulo": "Adjusting the strap"
+          }
+        },
+        "b7": {
+          "type": "foto",
+          "settings": {
+            "foto": "shopify://shop_images/holdwell-mascara-led-detalhe-carregamento-usb-c.png",
+            "recorte": "34.93,0,65.07,64.99",
+            "foco_x": 40,
+            "foco_y": 40,
+            "alt": "USB-C charging",
+            "rotulo": "USB-C charging"
+          }
+        },
+        "b8": {
+          "type": "foto",
+          "settings": {
+            "foto": "shopify://shop_images/holdwell-mascara-led-flat-lay-acessorios-linho-creme.png",
+            "recorte": "0,13.96,100,86.04",
+            "foco_x": 50,
+            "foco_y": 50,
+            "alt": "Everything in the box",
+            "rotulo": "Everything in the box"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7",
+        "b8"
+      ]
+    },
+    "fatos": {
+      "type": "gb-fatos",
+      "settings": {},
+      "blocks": {
+        "b1": {
+          "type": "fato",
+          "settings": {
+            "texto": "7 light modes"
+          }
+        },
+        "b2": {
+          "type": "fato",
+          "settings": {
+            "texto": "180 LEDs"
+          }
+        },
+        "b3": {
+          "type": "fato",
+          "settings": {
+            "texto": "Cordless, USB-C"
+          }
+        },
+        "b4": {
+          "type": "fato",
+          "settings": {
+            "texto": "10 to 15 minutes"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ]
+    },
+    "ritual": {
+      "type": "gb-ritual",
+      "settings": {
+        "titulo": "Ten quiet minutes before bed.",
+        "foto": "shopify://shop_images/holdwell-mascara-led-lifestyle-cama-fones-livro-fechado.png"
+      }
+    },
+    "modos": {
+      "type": "gb-modos",
+      "settings": {
+        "foto": "shopify://shop_images/holdwell-mascara-led-sete-cores-quadrado.png"
+      },
+      "blocks": {
+        "b1": {
+          "type": "modo",
+          "settings": {
+            "nome": "Red",
+            "recorte": "4.47,19.14,22.33,31.9"
+          }
+        },
+        "b2": {
+          "type": "modo",
+          "settings": {
+            "nome": "Blue",
+            "recorte": "27.27,19.14,22.33,31.9"
+          }
+        },
+        "b3": {
+          "type": "modo",
+          "settings": {
+            "nome": "Green",
+            "recorte": "50.08,19.14,22.33,31.9"
+          }
+        },
+        "b4": {
+          "type": "modo",
+          "settings": {
+            "nome": "Purple",
+            "recorte": "72.89,19.14,22.33,31.9"
+          }
+        },
+        "b5": {
+          "type": "modo",
+          "settings": {
+            "nome": "Yellow",
+            "recorte": "15.87,55.42,22.33,31.9"
+          }
+        },
+        "b6": {
+          "type": "modo",
+          "settings": {
+            "nome": "Cyan",
+            "recorte": "38.68,55.42,22.33,31.9"
+          }
+        },
+        "b7": {
+          "type": "modo",
+          "settings": {
+            "nome": "White",
+            "recorte": "61.48,55.42,22.33,31.9"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7"
+      ]
+    },
+    "passos": {
+      "type": "gb-passos",
+      "settings": {
+        "foto": "shopify://shop_images/holdwell-mascara-led-still-life-criado-mudo.png",
+        "recorte": "0,0,100,76.95",
+        "foco_x": 55,
+        "foco_y": 50,
+        "alt": "Zeraya mask on a nightstand beside a candle and books"
+      },
+      "blocks": {
+        "b1": {
+          "type": "passo",
+          "settings": {
+            "texto": "Start with clean, dry skin"
+          }
+        },
+        "b2": {
+          "type": "passo",
+          "settings": {
+            "texto": "Pick a light, close your eyes"
+          }
+        },
+        "b3": {
+          "type": "passo",
+          "settings": {
+            "texto": "Relax for 10 to 15 minutes"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "leds": {
+      "type": "gb-leds",
+      "settings": {
+        "foto": "shopify://shop_images/holdwell-mascara-led-macro-interior-vermelho.png"
+      }
+    },
+    "semfio": {
+      "type": "gb-semfio",
+      "settings": {
+        "foto": "shopify://shop_images/holdwell-mascara-led-detalhe-carregamento-usb-c.png"
+      }
+    },
+    "ajuste": {
+      "type": "gb-ajuste",
+      "settings": {
+        "foto": "shopify://shop_images/holdwell-mascara-led-ajuste-faixa-cinza.png"
+      }
+    },
+    "retrato": {
+      "type": "gb-retrato",
+      "settings": {
+        "foto": "shopify://shop_images/holdwell-mascara-led-lifestyle-mulher-madura-roxo.png",
+        "recorte": "7.97,1.99,72.01,77.99",
+        "foco_x": 50,
+        "foco_y": 30,
+        "alt": "Woman relaxing at dusk wearing the Zeraya mask in purple light"
+      }
+    },
+    "caixa": {
+      "type": "gb-caixa",
+      "settings": {
+        "foto": "shopify://shop_images/holdwell-mascara-led-flat-lay-acessorios-linho-creme.png",
+        "recorte": "0,13.96,100,86.04",
+        "foco_x": 50,
+        "foco_y": 50,
+        "alt": "Mask, strap, USB-C cable and manual laid out flat"
+      },
+      "blocks": {
+        "b1": {
+          "type": "item",
+          "settings": {
+            "texto": "LED face mask"
+          }
+        },
+        "b2": {
+          "type": "item",
+          "settings": {
+            "texto": "Adjustable strap"
+          }
+        },
+        "b3": {
+          "type": "item",
+          "settings": {
+            "texto": "USB-C cable"
+          }
+        },
+        "b4": {
+          "type": "item",
+          "settings": {
+            "texto": "Manual"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ]
+    },
+    "comparacao": {
+      "type": "gb-comparacao",
+      "settings": {},
+      "blocks": {
+        "b1": {
+          "type": "linha",
+          "settings": {
+            "tema": "Price",
+            "outras": "Inflated \"was\" price",
+            "nos": "One real price"
+          }
+        },
+        "b2": {
+          "type": "linha",
+          "settings": {
+            "tema": "Urgency",
+            "outras": "Countdown timers",
+            "nos": "None"
+          }
+        },
+        "b3": {
+          "type": "linha",
+          "settings": {
+            "tema": "Claims",
+            "outras": "Big promises",
+            "nos": "Plain specs"
+          }
+        },
+        "b4": {
+          "type": "linha",
+          "settings": {
+            "tema": "Returns",
+            "outras": "Hard to find",
+            "nos": "30 days after delivery"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ]
+    },
+    "guia": {
+      "type": "gb-guia",
+      "settings": {
+        "guia_produto": "zeraya-glow-companion"
+      }
+    },
+    "oferta": {
+      "type": "gb-oferta",
+      "settings": {
+        "titulo": "Pick your set.",
+        "guia_produto": "zeraya-glow-companion"
+      }
+    },
+    "entrega": {
+      "type": "gb-entrega",
+      "settings": {},
+      "blocks": {
+        "b1": {
+          "type": "etapa",
+          "settings": {
+            "titulo": "Today",
+            "texto": "You place your order"
+          }
+        },
+        "b2": {
+          "type": "etapa",
+          "settings": {
+            "titulo": "1 to 3 days",
+            "texto": "We ship it, business days"
+          }
+        },
+        "b3": {
+          "type": "etapa",
+          "settings": {
+            "titulo": "7 to 12 days",
+            "texto": "Estimated arrival, business days"
+          }
+        },
+        "b4": {
+          "type": "etapa",
+          "settings": {
+            "titulo": "30 days",
+            "texto": "To return it after delivery"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ]
+    },
+    "cuidado": {
+      "type": "gb-cuidado",
+      "settings": {}
+    },
+    "avaliacoes": {
+      "type": "gb-avaliacoes",
+      "settings": {}
+    },
+    "perguntas": {
+      "type": "gb-perguntas",
+      "settings": {
+        "guia_produto": "zeraya-glow-companion"
+      },
+      "blocks": {
+        "b1": {
+          "type": "pergunta",
+          "settings": {
+            "pergunta": "How do I use it?",
+            "resposta": "On clean, dry skin, choose a light mode and relax with your eyes closed for 10 to 15 minutes."
+          }
+        },
+        "b2": {
+          "type": "pergunta",
+          "settings": {
+            "pergunta": "Who should not use it?",
+            "resposta": "Do not use if you are pregnant, have epilepsy or a light-sensitive condition, or take medication that makes you sensitive to light. Check with your doctor if you are unsure."
+          }
+        },
+        "b3": {
+          "type": "pergunta",
+          "settings": {
+            "pergunta": "Does it have a cord?",
+            "resposta": "No cord while you wear it. It recharges with the included USB-C cable."
+          }
+        },
+        "b4": {
+          "type": "pergunta_politica",
+          "settings": {
+            "pergunta": "How long does delivery take?",
+            "resposta": "Orders ship in 1 to 3 business days and are estimated to arrive in 7 to 12 business days in the US. Standard US shipping is free from $49."
+          }
+        },
+        "b5": {
+          "type": "pergunta_politica",
+          "settings": {
+            "pergunta": "How do returns work?",
+            "resposta": "Request a return within 30 days after delivery at support@holdwellco.com. Return shipping is on you unless the item arrived damaged, defective or wrong."
+          }
+        },
+        "b6": {
+          "type": "pergunta_guia",
+          "settings": {
+            "pergunta": "What is the digital guide?",
+            "resposta": "The Zeraya Glow Companion, a {price} digital guide included with the 2 and 3 mask sets."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ]
+    },
+    "linha": {
+      "type": "gb-linha",
+      "settings": {},
+      "blocks": {
+        "b1": {
+          "type": "produto",
+          "settings": {
+            "produto": "led-neck-face-massager"
+          }
+        },
+        "b2": {
+          "type": "produto",
+          "settings": {
+            "produto": "neck-shoulder-massager"
+          }
+        },
+        "b3": {
+          "type": "produto",
+          "settings": {
+            "produto": "posture-corrector-core"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "cadastro": {
+      "type": "gb-cadastro",
+      "settings": {}
+    },
+    "rodape": {
+      "type": "gb-rodape",
+      "settings": {},
+      "blocks": {
+        "b1": {
+          "type": "link",
+          "settings": {
+            "texto": "LED Mask",
+            "url": "/products/led-glow-mask"
+          }
+        },
+        "b2": {
+          "type": "link",
+          "settings": {
+            "texto": "Shop All",
+            "url": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2"
+      ]
+    }
+  },
+  "order": [
+    "aviso",
+    "cabecalho",
+    "compra",
+    "fatos",
+    "ritual",
+    "modos",
+    "passos",
+    "leds",
+    "semfio",
+    "ajuste",
+    "retrato",
+    "caixa",
+    "comparacao",
+    "guia",
+    "oferta",
+    "entrega",
+    "cuidado",
+    "avaliacoes",
+    "perguntas",
+    "linha",
+    "cadastro",
+    "rodape"
+  ]
+}
